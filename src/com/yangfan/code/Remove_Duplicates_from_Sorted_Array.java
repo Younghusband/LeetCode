@@ -59,7 +59,7 @@ public class Remove_Duplicates_from_Sorted_Array {
       * 
       * */
      public static int removeDuplicates1(int [] nums){
-    	 int i = nums.length > 0 ? 1 : 0;
+    	 int i = nums.length > 0 ? 1 : 0;  //如果nums.length==0 增强for循环不会执行
     	    for (int n : nums)
     	        if (n > nums[i-1])
     	            nums[i++] = n;
