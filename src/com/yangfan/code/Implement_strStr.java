@@ -22,8 +22,10 @@ public class Implement_strStr {
 		Implement_strStr e = new Implement_strStr();
 		String haystack = "helloxxdfdf?world df3ddfsworld";
 		String needle = "world";
-	    e.strStr(haystack, needle);	
+	    int test1 = e.strStr(haystack, needle);	
+	    int test2 = e.strStr1(haystack, needle);	
 	    System.out.println(haystack.indexOf(needle));
+	    System.out.println(test1==test2?true:false);
 	}
 	
 	
@@ -35,5 +37,18 @@ public class Implement_strStr {
 				if(needle.charAt(j)!=haystack.charAt(i+j)) break;
 			}
 		}
+    }
+	
+	/**
+	 * another solution add some constraints in for-loop
+	 * */
+	public int strStr1(String haystack, String needle) {
+		if(needle.length()==0) return 0;  //edge case
+		for(int i=0;i<=haystack.length()-needle.length();i++){   //pretend stack is 8 needle is 7  need twice
+			for(int j=0;j<needle.length()&&needle.charAt(j)==haystack.charAt(i+j);j++){
+				if(j==needle.length()-1) return i;
+			}
+		}
+		return -1;
     }
 }
