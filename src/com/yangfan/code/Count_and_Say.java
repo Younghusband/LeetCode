@@ -32,6 +32,8 @@ public class Count_and_Say {
       * 
       * n-1位记录的是n位数字 在前面出现的次数
       * 
+      * 符合
+      * 
      * @param n
      * @return
      */
