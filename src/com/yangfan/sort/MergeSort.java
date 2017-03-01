@@ -1,4 +1,4 @@
-package com.yangfan.test;
+package com.yangfan.sort;
 /**
  * @description 
  *   将两个有序数组进行合并  是 归并排序的众多操作的最后一步
