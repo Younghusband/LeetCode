@@ -13,7 +13,7 @@ package com.yangfan.code;
 **************************************************/
 public class Add_Binary {
       public static void main(String[] args) {
-    	  String s1 = null;
+    	  String s1 = "1011";
     	  String s2 = "11";   //结果是1+2+4=7  111
     	  String test = "123";
     	  System.out.println(addBinaryPro(s1,s2));
