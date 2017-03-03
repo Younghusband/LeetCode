@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
     * Description: 
     *   Given an array of integers, return indices of the two numbers such that they add up to a specific target.

@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
     * Description: 
     *    Given a non-negative integer represented as a non-empty array of digits

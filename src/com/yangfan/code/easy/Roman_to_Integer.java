@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
     * Description: 
     *     Given a roman numeral, convert it to an integer.

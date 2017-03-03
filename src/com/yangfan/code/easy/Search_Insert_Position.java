@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /**
  * @description 
  *Given a sorted array and a target value, return the index if the target is found. If not, 

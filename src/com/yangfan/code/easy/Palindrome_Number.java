@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
  * Description: 
  *    Determine whether an integer is a palindrome. Do this without extra space.

@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
  * Description: Write a function to find the longest common prefix string
  * amongst an array of strings.

@@ -1,4 +1,4 @@
-package com.yangfan.code;
+package com.yangfan.code.easy;
 /************************************************
     * Description: 
     *    Implement atoi to convert a string to an integer.
