@@ -25,7 +25,6 @@ public class SortedList {
 	 
 	 public void insert(Object obj){
 		 Data data = new Data(obj);
-		 
 		 Data pre = null;
 		 Data cur = first;
 		 
