@@ -24,6 +24,15 @@ public class Remove_Duplicates_from_Sorted_List {
     	   s1.display();
 	}
        
+    
+       /**
+        * recursive way
+        */
+       public static ListNode deleteDuplicatesPro(ListNode head) {  //理解为 ListNode为有序链表的头结点
+    	   if(head == null || head.next == null)return head;
+           head.next = deleteDuplicatesPro(head.next);
+           return head.val == head.next.val ? head.next : head;
+          }
        
     /**
      * one pointer solution
@@ -60,8 +69,6 @@ public class Remove_Duplicates_from_Sorted_List {
     	   }
     	   return head;
        }
-    
-    
 }
 
 
