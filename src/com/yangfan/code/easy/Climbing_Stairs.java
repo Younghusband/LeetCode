@@ -10,7 +10,6 @@ package com.yangfan.code.easy;
     * 比如 3个台阶
     * 1 2和 2 1 是两种爬法   注意
     * 
-    * realize the 
     * 
     * @author    Vermouth.yf  
     * @version  1.0
@@ -23,8 +22,7 @@ public class Climbing_Stairs {
 	}
     
     public static int climbStairs(int n){
-    	if(n==1) return 1;
-    	if(n==2) return 2;
+    	if(n==1||n==2) return n;
     	int first =1;
     	int second =2;
     	int sum =0;

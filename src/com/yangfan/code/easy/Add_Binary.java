@@ -33,11 +33,11 @@ public class Add_Binary {
      	while(i>-1||j>-1||carry==1){   //循环条件  任一字符串没有走完  或者两个字符串都走完了  但是进一还在
      		aByte = (i>-1)?Character.getNumericValue(a.charAt(i--)):0;
      		bByte = (j>-1)?Character.getNumericValue(b.charAt(j--)):0;
-     		int result = aByte^bByte^carry;  // core
+     		int result = aByte^bByte^carry;  // core  位运算
      		carry = ((aByte+bByte+carry)>=2 )? 1 : 0;
      		sb.append(result);
      	}
-         return sb.reverse().toString(); 	
+         return sb.reverse().toString();	
       }
     
     
