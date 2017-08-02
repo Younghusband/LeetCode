@@ -16,6 +16,7 @@ public class Add_Binary {
     	  String s1 = "1011";
     	  String s2 = "11";   //结果是1+2+4=7  111
     	  System.out.println(addBinaryPro(s1,s2));
+    	  //haha
  	}
       
       
