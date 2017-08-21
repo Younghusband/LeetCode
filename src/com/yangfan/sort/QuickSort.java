@@ -7,8 +7,8 @@ import java.util.*;
  * Author: Vermouth.yf
  * Created on: 2017-8-21
  *
- * Details:   ¿ìËÙÅÅĞò
- *            ²»ÎÈ¶¨£¬¿ÉÄÜ»á¸Ä±äÏàÍ¬´óĞ¡ÔªËØµÄ³õÊ¼Ïà¶ÔÎ»ÖÃ¡£
+ * Details:   å¿«é€Ÿæ’åº
+ *            ä¸ç¨³å®šï¼Œå¯èƒ½ä¼šæ”¹å˜ç›¸åŒå¤§å°å…ƒç´ çš„åˆå§‹ç›¸å¯¹ä½ç½®ã€‚
  *            
  ********************************************/
 
@@ -24,14 +24,14 @@ public class QuickSort {
 	
 	
     private static int partition(int []array,int lo,int hi){
-        //¹Ì¶¨µÄÇĞ·Ö·½Ê½
+        //å›ºå®šçš„åˆ‡åˆ†æ–¹å¼
         int key=array[lo];
         while(lo<hi){
-            while(array[hi]>=key&&hi>lo){//´Óºó°ë²¿·ÖÏòÇ°É¨Ãè
+            while(array[hi]>=key&&hi>lo){//ä»ååŠéƒ¨åˆ†å‘å‰æ‰«æ
                 hi--;
             }
             array[lo]=array[hi];
-            while(array[lo]<=key&&hi>lo){//´ÓÇ°°ë²¿·ÖÏòºóÉ¨Ãè
+            while(array[lo]<=key&&hi>lo){//ä»å‰åŠéƒ¨åˆ†å‘åæ‰«æ
                 lo++;
             }
             array[hi]=array[lo];
@@ -58,25 +58,25 @@ public class QuickSort {
 	/**
 	 * Author: Vermouth.yf 
 	 * Date: 2017-8-21 
-	 * @param nums   Êı×é´óĞ¡
-	 * @param min    Êı×é×îĞ¡Öµ
-	 * @param max    Êı×é×î´óÖµ
+	 * @param nums   æ•°ç»„å¤§å°
+	 * @param min    æ•°ç»„æœ€å°å€¼
+	 * @param max    æ•°ç»„æœ€å¤§å€¼
 	 * @return
 	 */
 	public static int[] generateRandom(int nums, int min, int max){
-		int [] arr = new int[nums];  //³õÊ¼»¯Èç´ËÖ®´óµÄÊı×é
+		int [] arr = new int[nums];  //åˆå§‹åŒ–å¦‚æ­¤ä¹‹å¤§çš„æ•°ç»„
 		Random ran = new Random();
 		for(int i=0;arr[arr.length-1]==0;i++){
 			int temp = ran.nextInt(max);
 			boolean flag = false;
 			if(temp>=min&&temp<=max){
-				flag=!flag;   //ÎªÁË½µµÍÎŞÓÃ²Ù×÷
+				flag=!flag;   //ä¸ºäº†é™ä½æ— ç”¨æ“ä½œ
 			}
-			if(flag){  //Ğ£ÑéÔªËØÊÇ·ñÔÚÊı×éÖĞÒÑ¾­´æÔÚ,Èç¹û´æÔÚ ¼ÌĞøÏÂÒ»´ÎÑ­»·
+			if(flag){  //æ ¡éªŒå…ƒç´ æ˜¯å¦åœ¨æ•°ç»„ä¸­å·²ç»å­˜åœ¨,å¦‚æœå­˜åœ¨ ç»§ç»­ä¸‹ä¸€æ¬¡å¾ªç¯
 				checkAndAdd(arr,temp);
 			}
 		}
-		System.out.println("Éú³ÉµÄËæ»úÊıÊı×é:");
+		System.out.println("ç”Ÿæˆçš„éšæœºæ•°æ•°ç»„:");
 		for(int i: arr)
 		   System.out.print(i+"->");
 		return arr;
@@ -84,8 +84,8 @@ public class QuickSort {
 	
 	
 	/**
-	 * ¼ì²éÊı×éÖĞÊÇ·ñÒÑÓĞ¸Ãtarget, ÓĞÔò²»×÷ÈÎºÎ²Ù×÷£¬ÎŞÔò¼Óµ½Êı×éÄ©Î²
-	 * ´ÓÍ·±éÀúµ½Î²,Óöµ½0¾Í¸³Öµ²¢break. Óöµ½µÈÓÚtargetµÄÖµÖ±½Óbreak
+	 * æ£€æŸ¥æ•°ç»„ä¸­æ˜¯å¦å·²æœ‰è¯¥target, æœ‰åˆ™ä¸ä½œä»»ä½•æ“ä½œï¼Œæ— åˆ™åŠ åˆ°æ•°ç»„æœ«å°¾
+	 * ä»å¤´éå†åˆ°å°¾,é‡åˆ°0å°±èµ‹å€¼å¹¶break. é‡åˆ°ç­‰äºtargetçš„å€¼ç›´æ¥break
 	 * @param arr
 	 * @param target
 	 */
@@ -95,7 +95,7 @@ public class QuickSort {
 			if(arr[i]==0){
 				arr[i]=target;
 				index = i;
-				System.out.println("ÔÚµÚ"+(index+1)+"¸öÎ»ÖÃÉÏ²åÈëÁËËæ»úÊı¡£");
+				System.out.println("åœ¨ç¬¬"+(index+1)+"ä¸ªä½ç½®ä¸Šæ’å…¥äº†éšæœºæ•°ã€‚");
 				break;
 			}
 			if(arr[i]==target){
@@ -105,7 +105,7 @@ public class QuickSort {
 	}
 	
 	public static void print(int [] arr){
-		System.out.println("\n>>>>>>>>>>>>>>>>>ÅÅĞòºóµÄÊı×é>>>>>>>>>>>>>>>>>");
+		System.out.println("\n>>>>>>>>>>>>>>>>>æ’åºåçš„æ•°ç»„>>>>>>>>>>>>>>>>>");
 		for(int i: arr)
 			   System.out.print(i+"->");	
 		
