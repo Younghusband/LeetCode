@@ -1,4 +1,4 @@
-package yangfan.sort;
+package com.yangfan.sort;
 
 /*********************************************
  * InsertionSort.java
@@ -21,7 +21,7 @@ public class InsertionSort {
 	public static void main(String[] args) {
 		int [] arr = {4,3,2,1,5,5,6,8,7};
 		insertSort(arr);
-        BubbleSort.print(arr);		
+		
 	}
 	
 	
