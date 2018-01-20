@@ -1,4 +1,4 @@
-package yangfan.sort;
+package com.yangfan.sort;
 
 import java.util.*;
 
