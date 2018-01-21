@@ -16,18 +16,22 @@ public class QuickSort {
 	
 	public static void main(String[] args) {
 //		int [] arr = generateRandom(10,1,20);
-		int [] arr = {4,2,1,3,5,7,6};
+//		int [] arr = {4,2,1,3,5,7,6};
+		int [] arr = {6,1,2,7,9,3,4,5,10,8};
+		
+		System.out.println(partition(arr,0,arr.length-1));
+		
 		quickSort(arr);
-		print(arr);
+		
+//		print(arr);
 	}
-	
 	
 	
     private static int partition(int []array,int lo,int hi){
         //固定的切分方式
         int key=array[lo];
         while(lo<hi){
-            while(array[hi]>=key&&hi>lo){//从后半部分向前扫描
+            while(array[hi]>=key&&hi>lo){//从后半部分向前扫描 直到找到右侧小于基准数停止
                 hi--;
             }
             array[lo]=array[hi];
@@ -35,23 +39,25 @@ public class QuickSort {
                 lo++;
             }
             array[hi]=array[lo];
-        }
+        }	
         array[hi]=key;
         return hi;
+        
     }
     
     private static void sort(int[] array,int lo ,int hi){
+    	print(array);
         if(lo>=hi){
             return ;
         }
         int index=partition(array,lo,hi);
-        sort(array,lo,index-1);
+        sort(array,lo,index-1); 
         sort(array,index+1,hi); 
     }
 	
 	
 	public static void quickSort(int[] arr) {
-		sort(arr,0,arr.length-1);
+		sort(arr,0,arr.length-1);  //调用方式类似 Arrays.sort
 	}
 
 
@@ -108,7 +114,7 @@ public class QuickSort {
 		System.out.println("\n>>>>>>>>>>>>>>>>>排序后的数组>>>>>>>>>>>>>>>>>");
 		for(int i: arr)
 			   System.out.print(i+"->");	
-		
+        System.out.print("\n");
 	}
 
 }
