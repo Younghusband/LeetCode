@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.singleton;
 /**
  * @description 
  * @author vermouth.Mac
