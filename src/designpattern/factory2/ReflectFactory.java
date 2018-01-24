@@ -10,7 +10,7 @@ import designpattern.factory.v1.People;
 
 public class ReflectFactory {
 	
-	public static <E extends People> E zaoRen(Class<E> clz){
+	public static  <E extends People> E zaoRen(Class<E> clz){
 		E ren = null;
 		try {
 			ren = (E)Class.forName(clz.getName()).newInstance();

@@ -9,12 +9,16 @@ package com.yangfan.sort;
  * @version 2017年2月28日 下午10:21:08
  */
 
-public class MergeSort {
+public class Merge2SortedArray {
 	
 	public static void main(String[] args) {
+		
 		int [] arr1 = {3,6,7,9,10,15};
 		int [] arr2 = {1,4,8,11,12};
 		int [] result = sortArrPro(arr1,arr2);
+		
+//		int [] result = sortArr(arr1,arr2);
+		
 		for(int i : result)
 			System.out.print(i+"->");
 	}
@@ -41,24 +45,22 @@ public class MergeSort {
 	
 	
 	/**
-	 * 我这样合并是不是太蠢了  
+	 * 我的方法
 	 * */
 	private static int [] sortArr(int[] arr1,int[] arr2) {
 		if(arr1.length==0) return arr2;
 		if(arr2.length==0) return arr1;
 		int [] result =new int[arr1.length+arr2.length];
 		int i=0,j=0,x=0;
-		
-		while(i<arr1.length&&j<arr2.length){
+		while(i<arr1.length&&j<arr2.length){  // 一旦数组1或者数组2元素用完，内部for循环将另一个数组全部装填进result
 			if(arr1[i]<arr2[j]){
 				result[x++]=arr1[i++];
 			}else{
 				result[x++]=arr2[j++];
 			}
 			if(i==arr1.length)
-				for(int u=j;u<arr2.length;u++)
+				for(int u=j;u<arr2.length;u++)  //别看这是嵌套循环，实际上这个只有可能执行一次
 					result[x++]=arr2[u];
-			
 			if(j==arr2.length)
 				for(int u=i;u<arr1.length;u++)
 					result[x++]=arr1[u];

@@ -31,7 +31,7 @@ public class InsertionSort {
 		for(int i=1;i<arr.length;i++){  //数组大小小于2则不进行任何操作
 			//标的， 标的左侧为排序好的内容。
 			location = i;
-			int target = arr[i];
+			int target = arr[i];    //将标的存储起来
 			for(int j=i-1;j>=0;j--){
 				if(target<arr[j]){
 				   //如果 i位置的元素小于j位置的，j位置插入i位置的元素同时j+1直至i-1的元素依次往后移动一位
@@ -54,8 +54,6 @@ public class InsertionSort {
                 arr[j+1]=temp;
         }
     }
-	
-	
 	
 
 	
