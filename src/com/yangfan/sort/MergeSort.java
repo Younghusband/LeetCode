@@ -33,13 +33,12 @@ public class MergeSort {
 	
 	
 	//总方法
-	public int[] mergeSort(int[] arr){
+	public void mergeSort(int[] arr){
 		for(int gap=1;gap<arr.length;gap=gap*2){  //粒度从1开始合并
 			mergeArrays(arr,gap,arr.length);
 			System.out.print("gap="+gap+":\t");
 			print(arr);
 		}
-		return arr;
 	}
 	
 	
