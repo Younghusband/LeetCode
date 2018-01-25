@@ -18,25 +18,27 @@ public class Merge2SortedArray {
 		int [] result = sortArrPro(arr1,arr2);
 		
 //		int [] result = sortArr(arr1,arr2);
-		
 		for(int i : result)
 			System.out.print(i+"->");
 	}
 
 	
+	
+	
+	
 	/**
-	 * 非常棒的代码  尤其是三元运算符那里
+	 * 非常美的代码  尤其是三元运算符那里
 	 * */
 	private static int [] sortArrPro(int [] arr1,int[] arr2){
 		int [] array = new int [arr1.length+arr2.length];
 		int i=0,j=0;
-		while(i<arr1.length&&j<arr2.length){
+		while(i<arr1.length&&j<arr2.length){  //两个数组都完整的时候出不了这个循环
 			array[i+j]=arr1[i]<arr1[j]?arr1[i++]:arr2[j++];
 		}
-		while(i<arr1.length){
+		while(i<arr1.length){  //数组1还没耗尽
 			array[i+j]=arr1[i++];
 		}
-		while(j<arr2.length){
+		while(j<arr2.length){  //数组2还没耗尽
 			array[i+j]=arr2[j++];
 		}
         return array;		
@@ -45,7 +47,7 @@ public class Merge2SortedArray {
 	
 	
 	/**
-	 * 我的方法
+	 * 效率相对较高  对比下面
 	 * */
 	private static int [] sortArr(int[] arr1,int[] arr2) {
 		if(arr1.length==0) return arr2;
@@ -68,5 +70,6 @@ public class Merge2SortedArray {
 		}
 		return result;
 	}
+	
 
 }
