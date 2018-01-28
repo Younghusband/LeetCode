@@ -23,7 +23,7 @@ public class QuickSort {
 		
 		quickSort(arr);
 		
-//		print(arr);
+		print(arr);
 	}
 	
 	
