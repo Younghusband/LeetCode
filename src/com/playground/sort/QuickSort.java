@@ -52,7 +52,7 @@ public class QuickSort {
         }
         int index=partition(array,lo,hi);
         sort(array,lo,index-1); 
-        sort(array,index+1,hi); 
+        sort(array,index+1,hi);   //先排左边先排右边无所谓
     }
 	
 	

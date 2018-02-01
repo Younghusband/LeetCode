@@ -27,15 +27,14 @@ public class MergePro {
 		MergeSort tool = new MergeSort();
         int mid = low+(high-low)/2;   //试问为什么不用 mid = (low+high)/2
         if (low < high) {
+        	// 右边
+        	mergeSort(a, mid + 1, high);  //先排左侧还是先排右侧并无影响
             // 左边
             mergeSort(a, low, mid);
-            // 右边
-            mergeSort(a, mid + 1, high);
             // 左右归并
             tool.merge(a, low, mid, high);
             System.out.println(Arrays.toString(a));
         }
-
     }
 	
 	
