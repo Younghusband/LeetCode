@@ -14,11 +14,14 @@ package com.playground.designpattern.singleton;
 
 public class Singleton {
 	private static class SingletonHolder {
-		private static final Singleton Instance = new Singleton();
+		private static Singleton Instance = new Singleton();
 	}
 	private Singleton(){}
-	public static final Singleton getInstance(){
+	public static Singleton getInstance(){  //这个方法是不需要final的 因为实际上也不能被继承
 		return SingletonHolder.Instance;
 	}
 		
 }
+
+
+

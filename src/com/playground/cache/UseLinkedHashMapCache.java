@@ -32,6 +32,7 @@ public class UseLinkedHashMapCache<K,V> extends LinkedHashMap<K,V>{
 		cache.put(2, "two");
 		cache.put(3, "three");
 		
+		
 		Iterator<Map.Entry<Integer,String>> it = cache.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry<Integer, String> entry = it.next();
