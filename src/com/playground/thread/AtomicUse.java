@@ -17,6 +17,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicUse {
 	private static AtomicInteger count = new AtomicInteger(0);
+	
+	
 	/* synchronized */
 	public int multiAdd(){
 		try {
