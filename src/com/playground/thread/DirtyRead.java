@@ -33,15 +33,15 @@ public class DirtyRead {
 	}
 	
 	/**synchronized */
-	public synchronized void getValue(){  //不加synchronized就会产生脏读
-		System.out.println(Thread.currentThread().getName() +": getValue方法获得的数据:  user = "+user+" password = "+password);
-		
+	public void getValue(){  //不加synchronized就会产生脏读
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(Thread.currentThread().getName() +": getValue方法获得的数据:  user = "+user+" password = "+password);
+		
 	}
 	
 	public synchronized void test(){

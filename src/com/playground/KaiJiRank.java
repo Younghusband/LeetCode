@@ -22,6 +22,7 @@ import java.util.Map;
  *          2. (double)5/10 这样才能得到0.5
  * 
  *          3. 解决措施是，当key的种类为一的时候，不按算法来 return 100%
+ *          
  */
 
 public class KaiJiRank {
@@ -68,8 +69,10 @@ public class KaiJiRank {
 	}
 
 	/**
-	 * 0. 设置key=0 ,记录总人数。 每次开机都++ int sum 1. 根据key getValue 该key的count++ 2. 遍历全部
-	 * key > m 的所有count值。v 3. 开机超越比例为 v/sum *100 返回
+	 * 0. 设置key=0 ,记录总人数。 每次开机都++ int sum 
+	 * 1. 根据key getValue 该key的count++ 
+	 * 2. 遍历全部key > m 的所有count值。v 
+	 * 3. 开机超越比例为 v/sum *100 返回
 	 **/
 
 	public static double getRate(int m) {

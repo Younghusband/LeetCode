@@ -9,6 +9,8 @@ package com.playground.thread;
  * 1. 当方法没有static的时候 为什么结果始终num=200
  * 2. 明确两个static分别的作用
  *
+ * 当多个对象对一个方法进行竞争的时候，方法不加 类锁(static synchronized) 则各执行各的
+ *
  */
 
 public class MultiThread1 {
@@ -17,7 +19,7 @@ public class MultiThread1 {
 	private static int num =0;
 	
 	/**static */
-	public  static synchronized void printNum(String tag){
+	public static synchronized  void printNum(String tag){
 		
 		try {
 		if("a".equals(tag)){

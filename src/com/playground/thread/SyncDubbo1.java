@@ -1,5 +1,6 @@
 package com.playground.thread;
 
+import java.util.concurrent.TimeUnit;
 
 /**
  * @description 
@@ -36,7 +37,13 @@ public class SyncDubbo1 {
 		},"t1");
 		
 		t1.start();
-		
+		try {
+			TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		b.method2();
 	}
 
 }

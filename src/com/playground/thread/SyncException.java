@@ -6,6 +6,8 @@ package com.playground.thread;
  * @version 2018年2月5日 上午12:03:43
  * 
  *          同步方法中出现异常 咋整
+ *          
+ *          这里思考一点，为什么始终都是main线程先执行呢？
  */
 
 public class SyncException {
@@ -22,10 +24,9 @@ public class SyncException {
 					Integer.parseInt("a"); // throw new RuntimeException();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
 				System.out.println(" log info i = " + i);
 				// 具体的处理 或者throw new Exception();
-				throw new RuntimeException(e);
+				throw new RuntimeException(e);  //为了激活t1线程
 			}
 
 		}
@@ -40,11 +41,12 @@ public class SyncException {
         	   }
            },"t1");
            t1.start();
+           
            try{
-              sync.add();
+              sync.add();  //主线程
            }catch(Exception e){
         	  try {
-				t1.join();
+				t1.join();  
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
