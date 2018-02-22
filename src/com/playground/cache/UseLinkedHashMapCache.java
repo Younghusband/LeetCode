@@ -10,7 +10,7 @@ import java.util.Map;
  * @version 2018年1月30日 下午1:01:17
  */
 
-public class UseLinkedHashMapCache<K,V> extends LinkedHashMap<K,V>{
+public class UseLinkedHashMapCache<X,V> extends LinkedHashMap<X,V>{
 	private int cacheSize;
 	public UseLinkedHashMapCache(int cacheSize){
 	 super(16,0.75f,true);    //那个f如果不加  就是double类型，然后该构造没有该类型的入参
@@ -18,19 +18,19 @@ public class UseLinkedHashMapCache<K,V> extends LinkedHashMap<K,V>{
 	}
 	
 	@Override
-	protected boolean removeEldestEntry(Map.Entry<K,V> eldest){   //重写LinkedHashMap原方法
-         return size()>=cacheSize;		
+	protected boolean removeEldestEntry(Map.Entry<X,V> eldest){   //重写LinkedHashMap原方法
+         return size()>cacheSize;		
 	}
 	
 	
 	public static void main(String[]args){
 		UseLinkedHashMapCache<Integer,String> cache = new UseLinkedHashMapCache<Integer,String>(4);
 		cache.put(1, "one");
-		cache.put(2, "two");
-		cache.put(3, "three");
-		cache.put(4, "four");
-		cache.put(2, "two");
-		cache.put(3, "three");
+        cache.put(2, "two");
+        cache.put(3, "three");
+        cache.put(4, "four");
+        cache.put(2, "two");
+        cache.put(3, "three");
 		
 		
 		Iterator<Map.Entry<Integer,String>> it = cache.entrySet().iterator();
