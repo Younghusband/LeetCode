@@ -19,7 +19,7 @@ public class UseLinkedHashMapCache<X,V> extends LinkedHashMap<X,V>{
 	
 	@Override
 	protected boolean removeEldestEntry(Map.Entry<X,V> eldest){   //重写LinkedHashMap原方法
-         return size()>cacheSize;		
+         return size()>cacheSize;	//不包含等于条件
 	}
 	
 	

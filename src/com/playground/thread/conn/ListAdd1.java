@@ -46,7 +46,7 @@ public class ListAdd1 {
 
 		Thread t2 = new Thread(new Runnable() {
 			public void run() {
-				System.out.println(Thread.currentThread().getName() + "-----" + Thread.currentThread().getState());
+				System.out.println(Thread.currentThread().getName() + "-----进入-----状态是-----" + Thread.currentThread().getState());
 				while (true) {
 					if (listObj.size() == 5) {
 						throw new RuntimeException("线程个屁");

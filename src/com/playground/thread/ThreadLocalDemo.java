@@ -9,8 +9,7 @@ package com.playground.thread;
 
 public class ThreadLocalDemo {
 	public String name;
-	public static ThreadLocal<String> th = new ThreadLocal<String>();
-	
+	public ThreadLocal<String> th = new ThreadLocal<String>();
 	
 	public void set(String str){  
 		th.set(str);
