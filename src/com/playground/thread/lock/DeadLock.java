@@ -1,8 +1,10 @@
-package com.playground.thread;
+package com.playground.thread.lock;
 /**
  * @description 
  * @author vermouth.Mac
  * @version 2018年2月5日 下午10:17:24
+ * 
+ * 
  */
 
 public class DeadLock {
