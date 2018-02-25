@@ -69,7 +69,6 @@ public class MyQueue {
 		queue.put("c");
 		queue.put("d");
 		
-		
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
 				try {
