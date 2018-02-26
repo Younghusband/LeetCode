@@ -5,12 +5,12 @@ package com.playground.thread;
  * @version 2018年2月6日 下午7:46:49
  * 
  * 不使用ThreadLocal的话，各线程仍能获取到同一个对象的变量
+ * 
+ * ThreadLocal是怎样的一个数据结构
  */
 
 public class ThreadLocalDemo {
-	public String name;
 	public ThreadLocal<String> th = new ThreadLocal<String>();
-	
 	public void set(String str){  
 		th.set(str);
 	}
@@ -49,7 +49,6 @@ public class ThreadLocalDemo {
 				obj.get();
 			}
 		},"t2");
-		
 		
 		t1.start();
 		t2.start();
