@@ -21,6 +21,8 @@ import com.playground.thread.conn.ProducerAndConsumer.Goods;
  * 
  * 关闭线程池。
  * 
+ * 如果先关闭了所有消费者，保持生产者继续生产，会产生缓冲失败的情况
+ * 
  */
 
 public class Main {
@@ -52,6 +54,11 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+//		c1.stop();
+//		c2.stop();
+//		c3.stop();
+//		c4.stop();
 		
 		p1.stop();
 		p2.stop();
