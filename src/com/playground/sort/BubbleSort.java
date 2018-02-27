@@ -32,18 +32,15 @@ public class BubbleSort {
 		int [] arr = {4,3,2,1,5,6,8,7};
 		BubbleSort.bubble(arr);
 		print(arr);
-		
 	}
 	
-	
 	public static void bubble(int [] arr){
-		int temp = 0;
 		for(int i=0;i<arr.length-1;i++){
 			for(int j=0;j<arr.length-1-i;j++){
-				if(arr[j]>arr[j+1]){
-					temp = arr[j];
-					arr[j] = arr[j+1];
-					arr[j+1] = temp;
+				if(arr[j]>arr[j+1]){  //由于j!=j+1 所以放心大胆使用异或交换
+					arr[j] = arr[j]^arr[j+1];
+					arr[j+1] = arr[j]^arr[j+1];
+					arr[j] = arr[j]^arr[j+1];
 				}
 			}
 		}
