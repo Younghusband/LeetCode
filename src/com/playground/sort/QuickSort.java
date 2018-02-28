@@ -46,7 +46,7 @@ public class QuickSort {
     }
     
     private static void sort(int[] array,int lo ,int hi){
-    	print(array);
+//    	print(array);
         if(lo>=hi){
             return ;
         }
