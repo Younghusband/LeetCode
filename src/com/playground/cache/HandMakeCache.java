@@ -11,8 +11,10 @@ package com.playground.cache;
  */
 
 public class HandMakeCache {
-	   //计数器
+	//添加次数 计数器
     static int count =0;
+    //数组元素 计数器
+    static int size=0;
 	//最大长度
 	int maxSize;
 	//对象数组
@@ -24,53 +26,58 @@ public class HandMakeCache {
 		listArray = new int [maxSize];
 		this.maxSize = maxSize;
 	}
+	
+	public int getSize(){
+		return size;
+	}
 
-public void insert(int obj) throws Exception {
-	// 插入过程不应该指定下标，对于用户来讲这应该是透明的，只需要暴露插入的顺序
-	boolean exist = false; // 每次insert校验一下是否存在
-	int location = 0; // 对于已有元素，记录其已存在的位置
-	for (int i = 0; i < maxSize; i++) {
-		if (obj == listArray[i]) {
-			exist = true;
-			location = i; // 记录已存在的位置
-		}
-	} // 遍历看是否已有
-	if (count < this.maxSize) { // 当插入次数小于缓存大小的时候随意插入
-		if(exist)
-			return;
-		else
-			listArray[count] = obj;
-	} else { // 此时缓存为满，这时候要保留最末端元素先
-		int last = listArray[maxSize - 1];
-		if (!exist) {
-			for (int x = 0; x < maxSize - 2; x++) {
-				listArray[x] = listArray[x + 1];
+	public void insert(int obj) throws Exception {
+		// 插入过程不应该指定下标，对于用户来讲这应该是透明的，只需要暴露插入的顺序
+		boolean exist = false; // 每次insert校验一下是否存在
+		int location = 0; // 对于已有元素，记录其已存在的位置
+		for (int i = 0; i < maxSize; i++) {
+			if (obj == listArray[i]) {
+				exist = true;
+				location = i; // 记录已存在的位置
 			}
-			listArray[maxSize - 2] = last;
-		} else {
-			if (obj == listArray[0]) { // 此时倒数第二位至第二位元素整体前移
-				for (int x = 0; x < maxSize - 2; x++) {
+		} // 遍历看是否已有，每次插入都要遍历，感觉性能很差
+		if (size < this.maxSize) { // 当插入次数小于缓存大小的时候随意插入
+			if (exist) {
+				if (location == 0) {
+					for (int x = 0; x < size - 1; x++) {
+						listArray[x] = listArray[x + 1];
+					}
+				} else if (location < size - 1) { // 已存在元素不在最新的位置
+					for (int x = location; x < size - 1; x++) {
+						listArray[x] = listArray[x + 1];
+					}
+				}
+				listArray[size - 1] = obj; // 由于已存在
+			} else {
+				listArray[size] = obj;
+				size++; // 数组未满时才计数
+			}
+		} else { // 此时缓存为满，这时候要保留最末端元素先
+			if (!exist || obj == listArray[0]) { // 新元素添加进来，和最远元素添加进来效果一样
+				for (int x = 0; x <= maxSize - 2; x++) {
 					listArray[x] = listArray[x + 1];
 				}
-				listArray[maxSize - 2] = last;
-			} else if (obj == listArray[maxSize - 1]) { // 如果插入的是最新的元素，什么也不用做
-				// count++; return; //doNothing..
-			} else {
-				for (int i = location; i < maxSize - 2; i++) { // 注意这里用的location
+			} else if (obj != listArray[maxSize - 1]) {
+				for (int i = location; i <= maxSize - 2; i++) { // 注意这里用的location
 					listArray[i] = listArray[i + 1];
 				}
-				listArray[maxSize - 2] = last;
-			}
-
+			} // 如果添加的是上次添加的元素，则不管了。。
+			listArray[maxSize - 1] = obj;
 		}
-		listArray[maxSize - 1] = obj;
+		count++; // 计数
 	}
-	count++; // 计数
-}
 	
 	public Object get(int index) throws Exception {
 		return listArray[index];
 	}
+	
+	
+	
 	
 	
 	public static void main(String[] args) {
@@ -81,6 +88,10 @@ public void insert(int obj) throws Exception {
         {
         	list.insert(1);
         	list.insert(2);
+        	list.insert(3);
+        	
+        	list.insert(1);
+        	
         	list.insert(3);
         	list.insert(4);
         	list.insert(4);
