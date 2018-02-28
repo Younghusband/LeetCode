@@ -33,14 +33,18 @@ public class UseLinkedHashMapCache<X,V> extends LinkedHashMap<X,V>{
         cache.put(3, "three");
 		
 		
-		Iterator<Map.Entry<Integer,String>> it = cache.entrySet().iterator();
-		while(it.hasNext()){
-			Map.Entry<Integer, String> entry = it.next();
-			Integer key = entry.getKey();
-			System.out.print("Key:\t"+key);
-			String Value = entry.getValue();  //这个无需打印...
-			System.out.println();
-		}
+//		Iterator<Map.Entry<Integer,String>> it = cache.entrySet().iterator();
+//		while(it.hasNext()){
+//			Map.Entry<Integer, String> entry = it.next();
+//			Integer key = entry.getKey();
+//			System.out.print("Key:\t"+key);
+//			String Value = entry.getValue();  //这个无需打印...
+//			System.out.println();
+//		}
+		
+		for(Integer key : cache.keySet()){
+			   System.out.println("Key:\t"+key);
+			}
 		
 	}
 	
