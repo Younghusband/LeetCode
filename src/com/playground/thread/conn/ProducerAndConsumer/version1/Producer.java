@@ -34,7 +34,7 @@ public class Producer implements Runnable{
 	
 	@Override
 	public void run() {
-		while(isRunning){
+		while(isRunning){  //while在这里放在try外面才是符合逻辑的
 			  try {
 				//模拟制造商品的时间
 				Thread.sleep(r.nextInt(1000));
