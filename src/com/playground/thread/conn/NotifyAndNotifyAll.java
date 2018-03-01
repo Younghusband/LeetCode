@@ -2,7 +2,6 @@ package com.playground.thread.conn;
 
 import java.util.concurrent.TimeUnit;
 
-
 /**
  * @description 
  * @author vermouth.Mac
