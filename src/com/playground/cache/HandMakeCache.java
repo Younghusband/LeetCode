@@ -21,7 +21,7 @@ public class HandMakeCache {
 	int [] listArray;  //为了简略比较
 	
 	//顺序表的初始化方法
-	private HandMakeCache(int maxSize)
+	public HandMakeCache(int maxSize)
 	{
 		listArray = new int [maxSize];
 		this.maxSize = maxSize;
@@ -44,13 +44,9 @@ public class HandMakeCache {
 		if (size < this.maxSize) { // 当插入次数小于缓存大小的时候随意插入
 			if (exist) {
 				if (location == 0) {
-					for (int x = 0; x < size - 1; x++) {
-						listArray[x] = listArray[x + 1];
-					}
+					moveArrayElements(listArray,0,size-2);
 				} else if (location < size - 1) { // 已存在元素不在最新的位置
-					for (int x = location; x < size - 1; x++) {
-						listArray[x] = listArray[x + 1];
-					}
+					moveArrayElements(listArray,location,size-2);
 				}
 				listArray[size - 1] = obj; // 由于已存在
 			} else {
@@ -59,13 +55,9 @@ public class HandMakeCache {
 			}
 		} else { // 此时缓存为满，这时候要保留最末端元素先
 			if (!exist || obj == listArray[0]) { // 新元素添加进来，和最远元素添加进来效果一样
-				for (int x = 0; x <= maxSize - 2; x++) {
-					listArray[x] = listArray[x + 1];
-				}
+				moveArrayElements(listArray,0,maxSize-2);
 			} else if (obj != listArray[maxSize - 1]) {
-				for (int i = location; i <= maxSize - 2; i++) { // 注意这里用的location
-					listArray[i] = listArray[i + 1];
-				}
+				moveArrayElements(listArray,location,maxSize-2);
 			} // 如果添加的是上次添加的元素，则不管了。。
 			listArray[maxSize - 1] = obj;
 		}
@@ -76,12 +68,20 @@ public class HandMakeCache {
 		return listArray[index];
 	}
 	
+	/**
+	 * 平移数组的方法，start是要移动至的头位置，end为最后被移动的位置。
+	 * */
+	public void moveArrayElements(int [] arr, int start, int end){
+		for(int i=start;i<=end;i++){
+			arr[i] = arr[i+1];
+		}
+	}
+	
 	
 	
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int cacheSize = 5;
 		HandMakeCache list = new HandMakeCache(cacheSize);
         try
@@ -89,14 +89,12 @@ public class HandMakeCache {
         	list.insert(1);
         	list.insert(2);
         	list.insert(3);
-        	
         	list.insert(1);
-        	
         	list.insert(3);
         	list.insert(4);
         	list.insert(4);
         	list.insert(5);
-        	list.insert(3);
+//        	list.insert(3);
         	
         	for(int i=0;i<cacheSize;i++)
         	{
