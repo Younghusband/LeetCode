@@ -14,6 +14,7 @@ import com.playground.thread.conn.ProducerAndConsumer.Goods;
  * 
  * 生产者类
  * 
+ * 为什么这里的isRunning为volatile呢？  volatile的话，难道不就线程共享了么？
  */
 
 public class Producer implements Runnable{

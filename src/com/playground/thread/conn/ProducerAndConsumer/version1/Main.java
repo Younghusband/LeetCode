@@ -28,7 +28,7 @@ import com.playground.thread.conn.ProducerAndConsumer.Goods;
 public class Main {
 	
 	public static void main(String[] args) {
-		BlockingQueue queue = new LinkedBlockingQueue<Goods>(10);
+		BlockingQueue<Goods> queue = new LinkedBlockingQueue<Goods>(10);
 		
 		Producer p1 = new Producer(queue);
 		Producer p2 = new Producer(queue);
