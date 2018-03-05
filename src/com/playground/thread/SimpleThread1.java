@@ -7,6 +7,8 @@ package com.playground.thread;
  * 思考
  * 1.  为什么方法去掉了synchronized之后  虽然过程是乱的，但为什么结果能得到0
  * 2.  如果五个线程传入不同的SimpleThread1类，那么执行效果如何 (混乱)
+ * 
+ * 原来还可以直接在run方法上加synchronized...
  */
 
 public class SimpleThread1 extends Thread{
@@ -19,8 +21,6 @@ public class SimpleThread1 extends Thread{
     	count--;
     	System.out.println(this.currentThread().getName()+" count ="+ count);
     }
-	
-
 	
 	public static void main(String[] args) throws Exception{
 	     SimpleThread1 s1 = new SimpleThread1();
