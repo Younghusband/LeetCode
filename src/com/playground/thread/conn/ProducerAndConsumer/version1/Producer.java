@@ -14,7 +14,7 @@ import com.playground.thread.conn.ProducerAndConsumer.Goods;
  * 
  * 生产者类
  * 
- * 为什么这里的isRunning为volatile呢？  volatile的话，难道不就线程共享了么？
+ * 思考isRunning为什么要加volatile
  */
 
 public class Producer implements Runnable{
@@ -22,7 +22,7 @@ public class Producer implements Runnable{
 	//共享缓存区
 	private BlockingQueue<Goods> queue;
 	//多线程间是否启动变量，有强制从主内存中刷新的功能，即时返回线程的状态
-	private volatile boolean isRunning = true;  //用来控制生命周期，每个producer线程独立
+	private volatile boolean isRunning = true;  //用来控制生命周期
 	//id生成器
 	private static AtomicInteger count = new AtomicInteger();  //producer共享
 	//随机对象

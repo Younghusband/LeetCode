@@ -27,6 +27,7 @@ import com.playground.thread.conn.ProducerAndConsumer.Goods;
 
 public class Main {
 	
+	/***
 	public static void main(String[] args) {
 		BlockingQueue<Goods> queue = new LinkedBlockingQueue<Goods>(10);
 		
@@ -68,8 +69,61 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-//		cachePool.shutdown();  //这个并不能终止线程。。
+		cachePool.shutdown();  //这个并不能终止线程。。
+		
+	}  ***/
+	
+	
+	//非线程池方式
+	public static void main(String[] args) {
+		BlockingQueue<Goods> queue = new LinkedBlockingQueue<Goods>(10);
+		
+		Producer p1 = new Producer(queue);
+		Producer p2 = new Producer(queue);
+		
+		Consumer c1 = new Consumer(queue);
+		Consumer c2 = new Consumer(queue);
+		Consumer c3 = new Consumer(queue);
+		Consumer c4 = new Consumer(queue);
+		
+		Thread t1 = new Thread(p1,"生产者1");
+		Thread t2 = new Thread(p2,"生产者2");
+		
+		Thread t3 = new Thread(c1,"消费者1");
+		Thread t4 = new Thread(c2,"消费者2");
+		Thread t5 = new Thread(c3,"消费者3");
+		Thread t6 = new Thread(c4,"消费者4");
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		t4.start();
+		t5.start();
+		t6.start();
+		
+		try {
+			TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+//		c1.stop();
+//		c2.stop();
+//		c3.stop();
+//		c4.stop();
+		
+		p1.stop();
+		p2.stop();
+		
+		try {
+			TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 	}
+	
+	
+	
 
 }
