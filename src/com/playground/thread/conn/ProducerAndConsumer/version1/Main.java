@@ -95,11 +95,11 @@ public class Main {
 		Thread t6 = new Thread(c4,"消费者4");
 		
 		t1.start();
-		t2.start();
-		t3.start();
-		t4.start();
-		t5.start();
-		t6.start();
+//		t2.start();
+//		t3.start();
+//		t4.start();
+//		t5.start();
+//		t6.start();
 		
 		try {
 			TimeUnit.SECONDS.sleep(5);
@@ -120,6 +120,7 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
 		
 	}
 	
