@@ -18,7 +18,9 @@ public class Main {
     	 MessageProcessor p = new MessageProcessor();
     	 p.setMsg(msg);
     	 FilterChain chain = new FilterChain();
-    	 chain.add(new SensitiveFilter()).add(new FaceFilter()).add(new HTMLFilter());
+    	 chain.add(new SensitiveFilter()).add(new FaceFilter());
+    	 FilterChain chaintmp = new FilterChain().add(new HTMLFilter());
+    	 chain.add(chaintmp);  //将新的filterChain加入到老的filterChain中
     	 p.setChain(chain);
     	 String result = p.process();  //process方法不入参更美
     	 System.out.println(result);

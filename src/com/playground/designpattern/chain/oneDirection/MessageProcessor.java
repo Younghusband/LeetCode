@@ -22,7 +22,7 @@ public class MessageProcessor {
 	}
 
 	public String process(){
-    	return this.chain.process(msg);
+    	return this.chain.doFilter(msg);
     }
     
     public String getMsg() {

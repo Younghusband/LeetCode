@@ -10,31 +10,20 @@ import java.util.List;
  * 
  * 过滤器链
  * 
+ * 实现filter接口是为了将filterChain作为整体能够add进别的已有的filterChain
  */
 
-public class FilterChain {
+public class FilterChain implements Filter{ 
 	
-	private List<Filter> chain;
-	
-	public FilterChain(){
-		chain = new ArrayList<Filter>();
-	}
-	
-	public List<Filter> getChain() {
-		return chain;
-	}
-
-	public void setChain(List<Filter> chain) {
-		this.chain = chain;
-	}
-
+	private List<Filter> chain = new ArrayList<Filter>();;
 	
 	public FilterChain add(Filter f){
 		this.chain.add(f);
 		return this;
 	}
 	
-	public String process(String str){
+	@Override
+	public String doFilter(String str){
 		String result = str;
 		for(Filter f: chain){
 			result = f.doFilter(result);
