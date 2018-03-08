@@ -17,7 +17,7 @@ public class FilterChain implements Filter{
 	
 	int index;
 	public FilterChain(){
-		index = 0;
+		index = 0;   //每次初始化的时候计数器归零
 	}
 	
 	public Request getRequest() {
