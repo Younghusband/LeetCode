@@ -21,7 +21,7 @@ public class MyQueue {
 	private int minSize = 0;  //队列最少元素
 	private AtomicInteger count = new AtomicInteger(0);
 //	private int count = 0;
-	private LinkedList<String> queue = new LinkedList<String>();
+	private LinkedList<String> queue = new LinkedList<String>();   //注意，队列的方法是linkedList的，如果写List ... = new LinkedList 使用时需要转换
 	public String lock = "lock";
 	
 	public MyQueue(int maxSize){
