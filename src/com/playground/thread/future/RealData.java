@@ -25,7 +25,6 @@ public class RealData implements Data{
 	
 	@Override
 	public String getRequest() {
-		// TODO Auto-generated method stub
 		return result;
 	}
 	

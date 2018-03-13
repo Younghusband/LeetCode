@@ -1,6 +1,5 @@
 package com.playground.thread.future;
 
-import java.util.concurrent.TimeUnit;
 
 /**
  * @description 
@@ -22,7 +21,6 @@ public class FutureData implements Data {
 		isReady = true;
 		notify();
 	}
-	
 	
 	
     /**

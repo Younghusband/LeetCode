@@ -12,12 +12,11 @@ public class Client {
 		  new Thread(){
 			 @Override
 			 public void run(){
-				 RealData real = new RealData(qryStr);  //装载realdata
+				 RealData real = new RealData(qryStr);  //耗时操作  装载realdata
 				 future.setRealData(real);
 			 }
-			 
 		 }.start();
-		  return future;
+		  return future;   //主线程直接返回
 	 }
 	
 }
