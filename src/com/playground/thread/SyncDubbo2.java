@@ -34,7 +34,7 @@ public class SyncDubbo2 {
 
 	}
 
-	static class Sub extends Main {
+	  static class Sub extends Main {
 		public synchronized void operationSub() {
 			try {
 				while (i > 0) {
@@ -74,7 +74,7 @@ public class SyncDubbo2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		t2.start();
+		t2.start();
 //		sub.operationSub();
 		
 	}
