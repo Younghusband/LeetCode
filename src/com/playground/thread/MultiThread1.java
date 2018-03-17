@@ -19,7 +19,7 @@ public class MultiThread1 {
 	private static int num =0;
 	
 	/**static */
-	public static synchronized  void printNum(String tag){
+	public synchronized void printNum(String tag){
 		
 		try {
 		if("a".equals(tag)){
@@ -61,6 +61,11 @@ public class MultiThread1 {
 		
 		
 		t1.start();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		t2.start();
 	}
 	
