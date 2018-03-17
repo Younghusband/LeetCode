@@ -40,11 +40,12 @@ public class SyncException {
         		   sync.add();
         	   }
            },"t1");
-           t1.start();
            
            try{
+        	  t1.start();
+        	  Thread.sleep(20000);  //没有用这个暂停20秒
               sync.add();  //主线程
-           }catch(Exception e){
+           }catch(Exception e){  //如果捕获异常的话就强制让t1 join进来
         	  try {
 				t1.join();  
 			} catch (InterruptedException e1) {
