@@ -4,8 +4,6 @@ package com.playground.thread;
  * @author vermouth.Mac
  * @version 2018年2月20日 下午2:26:38
  * 
- * 试一试对象锁  其实我不是很会用
- * 
  * 这里如何控制t1.t2谁先拿到锁呢？
  */
 
@@ -16,7 +14,7 @@ public class ObjectLock {
 	public void oper(){
 			System.out.println(Thread.currentThread().getName()+" 进入到该方法。");
 			try {
-				synchronized(Object.class){  
+				synchronized(this){  
 				Thread.sleep(4000);
 				count++;
 				System.out.println("count加1");
@@ -29,7 +27,7 @@ public class ObjectLock {
 	
 	public void getCount(){
 		System.out.println(Thread.currentThread().getName()+" 进入到该方法。");
-		synchronized(Object.class){  
+		synchronized(this){  
 		    System.out.println(Thread.currentThread().getName()+" 获得值"+ count);
 		}
 	}
