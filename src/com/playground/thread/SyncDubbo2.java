@@ -11,6 +11,9 @@ package com.playground.thread;
  * 
  * 问题:  
  *    把注释打开，看看多线程下的效果。 思考为什么会出现(只有一个线程能执行的情况)
+ *    
+ * 答:
+ *    静态内部类，锁死了。 不存在线程安全问题   
  */
 
 public class SyncDubbo2 {
@@ -64,9 +67,15 @@ public class SyncDubbo2 {
 			
 		},"t2");
 		
+		t1.start();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		t2.start();
 //		sub.operationSub();
-		t1.start();
 		
 	}
 	
