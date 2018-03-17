@@ -57,6 +57,9 @@ public class ListAdd1 {
 
 		t1.start();
 		t2.start();
+		Thread.sleep(10000);
+		System.out.println(listObj.size());  //只有睡十秒才能打印出正确的size
+		
 
 	}
 	
