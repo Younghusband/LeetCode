@@ -76,6 +76,7 @@ class SourceThread implements Runnable{
 	    SemaphoreTest.print(" 排队蹲坑。。。");
 	    try {
 			s.acquire();
+			//下面3行为实际你要处理的业务，这里用蹲坑模拟
 			SemaphoreTest.print(" 占领坑位！！！！");
 			TimeUnit.SECONDS.sleep(r.nextInt(10));
 			SemaphoreTest.print(" 拉完屎出坑。");
