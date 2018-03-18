@@ -41,10 +41,11 @@ public class SyncException {
         	   }
            },"t1");
            
+           t1.start();
            try{
-        	  t1.start();
-        	  Thread.sleep(20000);  //没有用这个暂停20秒
+              Thread.currentThread().sleep(2000);
               sync.add();  //主线程
+              Thread.sleep(20000);   //由于while一直在循环，这个sleep走不到
            }catch(Exception e){  //如果捕获异常的话就强制让t1 join进来
         	  try {
 				t1.join();  
