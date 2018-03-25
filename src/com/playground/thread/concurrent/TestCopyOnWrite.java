@@ -16,11 +16,8 @@ import java.util.concurrent.TimeUnit;
  * 测试copyOnWriteArrayList
  * 
  * 将所有Thread构造替换成ArrayList  就会报java.util.ConcurrentModificationException
- * 
- * 思考:  为什么长度为5的list  1,2,9,9,9
- *       各个线程最多只能读到1,2,9呢？
  *       
- * 答:    cow不适合实时读取数据      
+ *  cow不适合实时读取数据      
  * 
  */
 
