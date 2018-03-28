@@ -13,6 +13,7 @@ public class FutureData implements Data {
 	private boolean isReady = false;
 	
 	public synchronized void setRealData(RealData realdata){
+	    System.out.println(Thread.currentThread().getName()+"-----setRealData");
 		if(isReady){
 			return;
 		}
@@ -29,7 +30,7 @@ public class FutureData implements Data {
      * */
 	@Override
 	public synchronized  String getRequest() {  //关键字的添加不影响实现接口
-		
+		System.out.println(Thread.currentThread().getName()+"-----getRequest");
 		while(!isReady){   //如果没准备好
 			try {
 				wait();
