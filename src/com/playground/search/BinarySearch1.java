@@ -14,6 +14,7 @@ import com.playground.sort.QuickSort;
  * 
  * 1.  mid = (hi+lo)/2  这样有溢出风险
  * 2.  更新lo和hi的时候用mid会有死循环风险  不过我暂时没有模拟出来
+ * 3.  如果一直没找到，也可以通过不停移动lo和hi来逼近坐标。  所以hi==lo的情况必须加入到循环条件里面。
  * 
  */
 
@@ -36,7 +37,7 @@ public class BinarySearch1 {
 		int lo=0;
 		int hi=arr.length-1;
 		int mid = 0;
-		while(hi>=lo){
+		while(hi>=lo){   //=是关键点
 			mid = (hi+lo)>>>1;   //防止溢出
 			if(arr[mid]==t){
 				return mid+1;   //返回的不是下标，而是这个元素所在的位置
@@ -53,7 +54,7 @@ public class BinarySearch1 {
 	
 	static int binarySearchRecur(int[]arr,int key,int lo,int hi){
 		int mid = (hi+lo)>>>1;
-		if(hi>=lo){
+		if(hi>=lo){   //=是关键点
 		  if(key==arr[mid]){
 			   return mid+1;
 		  }else if(key>arr[mid]){
