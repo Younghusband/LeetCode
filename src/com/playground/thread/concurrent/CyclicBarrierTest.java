@@ -37,8 +37,12 @@ public class CyclicBarrierTest {
 			}
 		});
 		
+//		PrepareTask task = new PrepareTask(barrier);
+		
 		for(int i=1;i<=THREAD_NUM;i++){
 			pool.execute(new PrepareTask(barrier));
+//			pool.execute(task);   //多个runnable启动线程，和一个runnable怼进多个线程有什么区别？
+			
 		}
 		
 		try {

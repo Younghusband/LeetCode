@@ -6,5 +6,15 @@ package com.playground.designpattern.factory.v1;
  */
 
 public class Main {
-
+     
+	public static void main(String[] args) {
+		Shehui god = new Shehui();   //隐藏god
+		People p1 = god.zaoRen("worker");
+		People p2 = god.zaoRen("programmer");
+		
+		p1.produce();
+		p2.produce();
+		
+	}
+	
 }
