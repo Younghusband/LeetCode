@@ -13,7 +13,5 @@ hs_err_pid*
 
 #My Configurations
 .settings
-.classpath
-.project
 .DS_Store
 bin
