@@ -15,3 +15,7 @@ hs_err_pid*
 .settings
 .DS_Store
 bin
+
+# idea file
+.idea
+LeetCode.iml
