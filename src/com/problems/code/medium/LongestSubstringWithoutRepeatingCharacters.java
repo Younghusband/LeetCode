@@ -121,7 +121,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
 
     /**
-     * @Description: 用于返回 字符串s在下标 i,j 范围内是否都是不重复字符
+     * 用于返回 字符串s在下标 i,j 范围内是否都是不重复字符
      * n方次遍历过程中每次都会new出来set  属于比较低效的方法。
      **/
     public boolean allUniqueChar(String s, int i, int j) {
