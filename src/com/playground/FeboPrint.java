@@ -5,8 +5,6 @@ package com.playground;
  * @version 2018年3月26日 下午2:30:49
  * 
  * 面试的时候，手写遍历肥波纳妾数列
- * 
- * 
  */
 
 public class FeboPrint {
