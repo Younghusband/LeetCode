@@ -53,8 +53,6 @@ public class MyLambda {
             System.out.println("xxxx");
         });
         
-        
-        
     }
     
 
