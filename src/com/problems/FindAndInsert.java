@@ -27,7 +27,8 @@ public class FindAndInsert {
 	    int [] arr = {1,3,6,8};
 	    int key1 = 1;
 	    int key2 = 7;
-	    System.out.println(f.getLocation(arr,key2));
+			System.out.println(f.getLocation(arr,key2));
+			System.out.println("杨帆");
 	}
      
      public int getLocation(int [] arr, int key){
