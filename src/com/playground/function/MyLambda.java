@@ -68,7 +68,6 @@ public class MyLambda {
         
         List<String> languages = Arrays.asList("Java", "Scala", "C++", "Haskell", "Lisp");
         
-        
     }
     
 
