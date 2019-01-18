@@ -23,3 +23,7 @@ bin
 .idea
 LeetCode.iml
 /target/
+/.apt_generated/
+
+.vscode
+.factorypath

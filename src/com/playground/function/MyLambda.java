@@ -2,7 +2,9 @@ package com.playground.function;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
@@ -19,8 +21,6 @@ import javax.swing.JButton;
 public class MyLambda {
     
     public void lambda() {
-        
-
         ActionListener listener = event -> System.out.println("button clicked");
         /**
          * 代码块
@@ -37,7 +37,7 @@ public class MyLambda {
         BinaryOperator<Long> infer = (x, y) -> x + y;//
     }
     
-    public void guiMethod() {
+    public static void guiMethod() {
         JButton show =  new JButton("Show");
         show.addActionListener(new ActionListener() {
              @Override
@@ -65,7 +65,24 @@ public class MyLambda {
         strList.forEach(System.out::println);  // Better way
         
         List<String> languages = Arrays.asList("Java", "Scala", "C++", "Haskell", "Lisp");
+
+        int [] arr = {9,8,7,6,5,4,3,2,1};
+        // bubble sort
+        for(int i=0; i<arr.length-1; i++) {
+            for(int j=0; j<arr.length-i-1; j++) {
+                if (arr[j]>arr[j+1]) {
+                    arr[j]   = arr[j]^arr[j+1];
+                    arr[j+1] = arr[j]^arr[j+1];
+                    arr[j]   = arr[j]^arr[j+1];
+                }
+            }
+        }
+        for(int i : arr)
+            System.out.print(i+"->");
+
+        // insertion sort
         
+
     }
     
 

@@ -1,25 +1,20 @@
 package com.problems.code.easy;
 
-import java.util.Arrays;
-
 /************************************************
-    * Description:   var Question : LeetCode 
+    * Description:    
     *   
     *   Reverse digits of an integer.
     *   Example1: x = 123, return 321
     *   Example2: x = -123, return -321 
     * 
-    *   不要小瞧  有着复杂的逻辑处理
-    *   从最初的script到最后调整完毕的代码，收获很多
-    *   首先input的int值不能越界（这个与我的程序无关，输入方自己需注意）
+    *   首先input的int值不能越界
     *   进入方法后判断各种奇葩情况，在排序组合完的new Integer情况下注意把异常抛出
     *   在总方法中catch异常，并做处理
     *   
     *   点评：  那个try catch是点睛之笔
     *   
-    * @author    杨帆  
-    * @version  1.0
-    * @date ：2017年1月17日 上午9:46:06 
+    * @author   mr_yo    
+    * @date     2017年1月17日 上午9:46:06 
 **************************************************/
 public class Reverse_Integer {
 	
@@ -37,24 +32,24 @@ public class Reverse_Integer {
 	}
 	
      public int reverse(int x) {
-    	 if(x>Integer.MAX_VALUE||x<Integer.MIN_VALUE){
-    		 return 0;
-    	 }  //反转后的也要来次判断
-    	 int result = 0;
-    	 try{
-         if(x==0){
-        	 return x;
-         }else if(x<0){
-        	 result = reversePassive(x);
-         }else
-        	 result = reversePositive(x);
-    	 }catch(Exception e){
-    		 return 0;
-    	 }
-         if(result>Integer.MAX_VALUE||result<Integer.MIN_VALUE){
-        	 return 0;
-         }
-         return result;
+        if (x > Integer.MAX_VALUE || x < Integer.MIN_VALUE) {
+            return 0;
+        } //反转后的也要来次判断
+        int result = 0;
+        try {
+            if (x == 0) {
+                return x;
+            } else if (x < 0) {
+                result = reversePassive(x);
+            } else
+                result = reversePositive(x);
+        } catch (Exception e) {
+            return 0;
+        }
+        if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
+            return 0;
+        }
+        return result;
     }
      
      public int reversePassive(int x) throws Exception{
@@ -113,16 +108,20 @@ public class Reverse_Integer {
     	    return result;
      }
     
-    public int theBestSolution(int ready){
-    	 long  dev = 0;
-		  while(ready!=0){
-			   dev = dev*10+ready%10;
-			   ready = ready/10;
-			   if(dev>Integer.MAX_VALUE||dev<Integer.MIN_VALUE){
-				   return 0;
-			   }
-		  }
-		  return (int)dev;
+    
+    /**
+     * The simpler the idea, the better
+     */
+    public int theBestSolution(int src){
+        long dev = 0;
+        while (src != 0) {
+            dev = dev * 10 + src % 10;
+            src = src / 10;
+            if (dev > Integer.MAX_VALUE || dev < Integer.MIN_VALUE) {
+                return 0;
+            }
+        }
+		return (int)dev;
     }
     
 }
