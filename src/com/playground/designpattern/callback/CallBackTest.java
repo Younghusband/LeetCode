@@ -1,5 +1,12 @@
 package com.playground.designpattern.callback;
 
+/**
+ * @author mr_yo
+ * 
+ * The process of callback as follows:
+ * 
+ * this -> father.doThing -> this.before -> father's time-consuming operation ->
+ */
 public class CallBackTest implements CallBack.ICallback{
     
     private CallBack callback;
@@ -7,7 +14,6 @@ public class CallBackTest implements CallBack.ICallback{
     public CallBackTest() {
         callback = new CallBack(this);
     }
-    
     
     @Override
     public void before() {

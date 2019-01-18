@@ -15,16 +15,12 @@ public class Seller {
         
     }
     
-    public void callKidHelp(int ...prices) {
-        new Calculator().call(new SellerCustomer(), prices);
-    }
-    
-    
     private String name;
-    
     public Seller(String name) {
         this.name = name;
     }
-    
+    public void callKidHelp(int ...prices) {
+        new Calculator().call(new SellerCustomer(), prices);
+    }
     
 }
