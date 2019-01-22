@@ -60,15 +60,13 @@ public class ConcurrentTest {
                 System.out.println(Thread.currentThread().getName() + " countUp操作: 操作后的值为 " + i);
                 break;
             }
-            if (null == count) {
-                synchronized (getClass()) {
-                    if (null == concurrents.get(pacs)) {
-                        concurrents.put(pacs, new AtomicInteger(1));
-                        System.out.println(String.format(Thread.currentThread().getName() + " 往 %s 里 新建一个值 %s", pacs, concurrents.get(pacs).get()));
-                    } else {
-                        int j = concurrents.get(pacs).incrementAndGet();
-                        System.out.println(Thread.currentThread().getName() + " countUp解锁后操作: 操作后的值为 " + j);
-                    }
+            synchronized (getClass()) {
+                if (null == concurrents.get(pacs)) {
+                    concurrents.put(pacs, new AtomicInteger(1));
+                    System.out.println(String.format(Thread.currentThread().getName() + " 往 %s 里 新建一个值 %s", pacs, concurrents.get(pacs).get()));
+                } else {
+                    int j = concurrents.get(pacs).incrementAndGet();
+                    System.out.println(Thread.currentThread().getName() + " countUp解锁后操作: 操作后的值为 " + j);
                 }
             }
             break;
