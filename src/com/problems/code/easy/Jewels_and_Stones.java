@@ -9,10 +9,6 @@ package com.problems.code.easy;
  * 
  * String is often handled from a char Perspective. Try not to use String's methods, that is so slow.
  */
-/**
- * @author mr_yo
- *
- */
 public class Jewels_and_Stones {
     
     public static void main(String[] args) {
