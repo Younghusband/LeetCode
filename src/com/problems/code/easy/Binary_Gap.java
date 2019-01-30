@@ -59,18 +59,7 @@ public class Binary_Gap {
     
     public static void main(String[] args) {
         Binary_Gap service = new Binary_Gap();
-        
-        System.out.println(service.transferDecimal2BinaryStr(0));
-        System.out.println(service.transferDecimal2BinaryStr(16));
-        System.out.println(service.transferDecimal2BinaryStr(999));
-        
-        System.out.println("-------------------------------------");
-        
-        System.out.println(service.binaryGap(6));
-        
-        System.out.println(4&1);
-        System.out.println(-4>>>1);
-        
+        service.binaryToDecimal(20);
     }
     
     /**
@@ -99,6 +88,20 @@ public class Binary_Gap {
             xxx = xxx / 2;
         }
         return str.equals("") ? "0" : str;
+    }
+    
+    
+    public void binaryToDecimal(int n) {
+        int t = 0; //用来记录位数
+        int bin = 0; //用来记录最后的二进制数
+        int r = 0; //用来存储余数
+        while (n != 0) {
+            r = n % 2;
+            n = n / 2;
+            bin += r * Math.pow(10, t);
+            t++;
+        }
+        System.out.println(bin);
     }
 
 }
