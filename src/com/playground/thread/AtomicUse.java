@@ -35,14 +35,9 @@ public class AtomicUse {
 	
 	public static void main(String[] args) {
 		final AtomicUse au = new AtomicUse();
-		List<Thread> threadlist = new ArrayList<Thread>();
+		List<Thread> threadlist = new ArrayList<>();
 		for(int i=0;i<100;i++){
-			threadlist.add(new Thread(new Runnable(){
-				public void run(){
-					System.out.println(au.multiAdd());
-				}
-			},"t"
-			));
+			threadlist.add(new Thread(() -> System.out.println(au.multiAdd()),"t"));
 		}
 		for(Thread t:threadlist){
 			t.start();

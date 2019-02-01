@@ -13,13 +13,13 @@ import java.util.Map;
 public class UseLinkedHashMapCache<X,V> extends LinkedHashMap<X,V>{
 	private int cacheSize;
 	public UseLinkedHashMapCache(int cacheSize){
-	 super(16,0.75f,true);    //那个f如果不加  就是double类型，然后该构造没有该类型的入参
+	 super(16, 0.75f, true);    //那个f如果不加  就是double类型，然后该构造没有该类型的入参
 	 this.cacheSize = cacheSize;
 	}
 	
 	@Override
 	protected boolean removeEldestEntry(Map.Entry<X,V> eldest){   //重写LinkedHashMap原方法
-         return size()>cacheSize;	//不包含等于条件
+         return size() > cacheSize;	//不包含等于条件
 	}
 	
 	

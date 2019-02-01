@@ -25,7 +25,6 @@ public class DirtyRead {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.password = p;
@@ -37,7 +36,6 @@ public class DirtyRead {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println(Thread.currentThread().getName() +": getValue方法获得的数据:  user = "+user+" password = "+password);
