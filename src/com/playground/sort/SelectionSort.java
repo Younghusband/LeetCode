@@ -21,26 +21,26 @@ package com.playground.sort;
 public class SelectionSort {  
 	
 	public static void main(String[] args) {
-			int [] arr= {4,3,2,1,5,6,8,7};
-		    selectionSort(arr);
-		    BubbleSort.print(arr);
+	    SelectionSort sort = new SelectionSort();
+	    int [] arr= {9,3,2,1,5,6,8,7,4};
+	    sort.selectionSort(arr);
+	    BubbleSort.print(arr);
 	}
 	
-	public static void selectionSort(int [] arr){
-		int location = 0;
-		int temp = 0;
-		for(int i=0;i<arr.length-1;i++){
-			location = i;
-			for(int j=i+1;j<arr.length;j++){
-				if(arr[j]<arr[location]){
-					location = j;
-				}
-			}
-			temp = arr[i];
-			arr[i] = arr[location];
-			arr[location] = temp;
-		}
-	}
+    public void selectionSort(int[] arr) {
+        int location = 0; // 尽量不要在for循环中初始化变量
+        int temp = 0;
+        for (int i = 0; i < arr.length - 1; i++) { // 第一个位置~倒数第二个位置的选址  一共n-1轮
+            location = i;
+            for (int j = i + 1; j < arr.length; j++) { // 每一轮记录选择最小元素的地址
+                if (arr[j] < arr[location]) { // 与记录的最小值进行比较，并视情况更新最小值的下标
+                    location = j;
+                }
+            }
+            temp = arr[i];
+            arr[i] = arr[location];
+            arr[location] = temp;
+        }
+    }
 	
-
 }

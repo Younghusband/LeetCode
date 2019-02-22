@@ -14,27 +14,34 @@ package com.playground.sort;
  * 否则一直往前找直到找到它该插入的位置。如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。
  * 所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以插入排序是稳定的。
  * 
+ * 1. 要么每次平移数组，然后最后交换元素
+ * 2. 要么每次都交换元素
+ * 
+ * 哪种更合适？ 主流的似乎都是平移数组，最后交换元素
+ * 
  ********************************************/
 
 public class InsertionSort {
     
 	public static void main(String[] args) {
-		int [] arr = {4,3,2,1,5,5,6,8,7};
-//		insertSort(arr);
-		sortArr(arr);
-		BubbleSort.print(arr);
+	    InsertionSort sort = new InsertionSort();
+		int [] arr = {6,3,4,2,1,7,9,8,5};
+////		insertSort(arr);
+		sort.sortArr(arr);
+        BubbleSort.print(arr);
 	}
 	
 	
-	public static void insertSort(int [] arr){
+	public void insertSort(int [] arr){
 		int location = 0;
 		for(int i=1;i<arr.length;i++){  //数组大小小于2则不进行任何操作
 			//标的， 标的左侧为排序好的内容。
 			location = i;
 			int target = arr[i];    //将标的存储起来
 			for(int j=i-1;j>=0;j--){
-				if(target<arr[j]){
-				   //如果 i位置的元素小于j位置的，j位置插入i位置的元素同时j+1直至i-1的元素依次往后移动一位
+				if(target>=arr[j])
+				    break;
+				else{ //如果 i位置的元素小于j位置的，记录i位置的元素该插入的位置location，同时将数组向后平移
 					arr[j+1]=arr[j];
 					location = j;
 				}
@@ -43,7 +50,7 @@ public class InsertionSort {
 		}
 	}
 	
-	private static void sortArr(int[] arr) {  //这个和上面的方法没有区别
+	public void sortArr(int[] arr) {  //这个和上面的方法没有区别
         for(int i=1;i<arr.length;i++){
                 int j = i-1;
                 int temp = arr[i];
@@ -55,6 +62,5 @@ public class InsertionSort {
         }
     }
 	
-
 	
 }

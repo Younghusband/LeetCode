@@ -12,13 +12,13 @@ package com.playground.sort;
 public class Merge2SortedArray {
 	
 	public static void main(String[] args) {
+	    
+	    Merge2SortedArray service = new Merge2SortedArray();
 		
 		int [] arr1 = {3,6,7,9,10,15};
 		int [] arr2 = {1,4,8,11,12};
-		int [] result = sortArrPro(arr1,arr2);
 		
-//		int [] result = sortArr(arr1,arr2);
-		for(int i : result)
+		for(int i : service.sortArr(arr1, arr2))
 			System.out.print(i+"->");
 	}
 
@@ -29,7 +29,7 @@ public class Merge2SortedArray {
 	/**
 	 * 非常美的代码  尤其是三元运算符那里
 	 * */
-	private static int [] sortArrPro(int [] arr1,int[] arr2){
+	public int [] sortArrPro(int [] arr1,int[] arr2){
 		int [] array = new int [arr1.length+arr2.length];
 		int i=0,j=0;
 		while(i<arr1.length&&j<arr2.length){  //两个数组都完整的时候出不了这个循环
@@ -47,29 +47,27 @@ public class Merge2SortedArray {
 	
 	
 	/**
-	 * 效率相对较高  对比下面
+	 * my solution
 	 * */
-	private static int [] sortArr(int[] arr1,int[] arr2) {
-		if(arr1.length==0) return arr2;
-		if(arr2.length==0) return arr1;
-		int [] result =new int[arr1.length+arr2.length];
-		int i=0,j=0,x=0;
-		while(i<arr1.length&&j<arr2.length){  // 一旦数组1或者数组2元素用完，内部for循环将另一个数组全部装填进result
-			if(arr1[i]<arr2[j]){
-				result[x++]=arr1[i++];
-			}else{
-				result[x++]=arr2[j++];
-			}
-			if(i==arr1.length)
-				for(int u=j;u<arr2.length;u++)  //别看这是嵌套循环，实际上这个只有可能执行一次
-					result[x++]=arr2[u];
-			if(j==arr2.length)
-				for(int u=i;u<arr1.length;u++)
-					result[x++]=arr1[u];
-			
-		}
-		return result;
+	public int [] sortArr(int[] arr1,int[] arr2) {
+        if (null == arr1 || arr1.length == 0) return arr2;
+        if (null == arr2 || arr2.length == 0) return arr1;
+        int[] result = new int[arr1.length + arr2.length];
+        int i = 0, j = 0, x = 0;
+        while (i < arr1.length && j < arr2.length) { // 一旦数组1或者数组2元素用完，内部for循环将另一个数组全部装填进result
+            if (arr1[i] < arr2[j]) {
+                result[x++] = arr1[i++];
+            } else {
+                result[x++] = arr2[j++];
+            }
+        }
+        while(i < arr1.length) {
+            result[x++] = arr1[i++];
+        }
+        while(j < arr2.length) {
+            result[x++] = arr2[j++];
+        }
+        return result;
 	}
 	
-
 }
