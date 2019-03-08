@@ -10,6 +10,8 @@ package com.playground.linkedlist;
 
 public class ReverseSinglyLinkedList {
 	public static void main(String[] args) {
+	    ReverseSinglyLinkedList service = new ReverseSinglyLinkedList();
+	    
 		ListNode head = new ListNode(0);
 		ListNode ListNode1 = new ListNode(1);
 		ListNode ListNode2 = new ListNode(2);
@@ -29,7 +31,7 @@ public class ReverseSinglyLinkedList {
 		System.out.println("\n>>>>>>>>>>>>>>翻转后<<<<<<<<<<<<<<");
 		
 //		head = reverse(head);
-		head = reverseRe(head);
+		head = service.reverseRe(head);
 		ListNode t = head;
 		
 		while(t!=null){
@@ -45,7 +47,7 @@ public class ReverseSinglyLinkedList {
 	
 	
 	//非递归方式反转
-	public static ListNode reverse(ListNode head){
+	public ListNode reverse(ListNode head){
 		ListNode prev = null;
 		while(head!=null){
 			ListNode temp = head.next;  //先将下一个结点用临时变量记录
@@ -53,21 +55,20 @@ public class ReverseSinglyLinkedList {
 			prev = head;
 			head = temp;  //将head指向原本下一个结点
 		}
-		return prev;  //这个地方一定要return
+		return prev;
 		
 	}
 	
 	//递归方式反转
-	public static ListNode reverseRe(ListNode head){
-		 if(head==null||head.next ==null)  //空链表或者已经到链表末尾
-	            return head;
-	        ListNode prev = reverseRe(head.next);
-	        head.next.next = head;
-	        head.next = null;
-	        return prev;
+	public ListNode reverseRe(ListNode head){
+    	if(head==null||head.next ==null) { //空链表或者已经到链表末尾
+            return head;
+    	}
+        ListNode prev = reverseRe(head.next);
+        head.next.next = head;
+        head.next = null;
+        return prev;
 	}
 	
 	
-	
-
 }

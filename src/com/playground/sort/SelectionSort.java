@@ -37,9 +37,11 @@ public class SelectionSort {
                     location = j;
                 }
             }
-            temp = arr[i];
-            arr[i] = arr[location];
-            arr[location] = temp;
+            if(location != i) {
+                temp = arr[i];
+                arr[i] = arr[location];
+                arr[location] = temp;
+            }
         }
     }
 	

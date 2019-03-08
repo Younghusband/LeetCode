@@ -16,46 +16,58 @@ package com.problems;
 	[1,3,5,6]，0→0
 	
 	// 输入: 一维数组 输出: 目标元素的位置
+     
+	
  * 
  */
 
 public class FindAndInsert {
-	
-     public static void main(String[] args) {
-    	FindAndInsert f = new FindAndInsert(); 
-    	 
-	    int [] arr = {1,3,6,8};
-	    int key1 = 1;
-	    int key2 = 7;
-			System.out.println(f.getLocation(arr,key2));
-			System.out.println("杨帆");
-	}
+    public static void main(String[] args) {
+        FindAndInsert f = new FindAndInsert();
+
+        int[] arr = { 1, 3, 6, 8 };
+//        int key1 = 1;
+        int key2 = 7;
+        System.out.println(f.returnInsertPosition(arr, key2));
+        System.out.println("杨帆");
+    }
      
-     public int getLocation(int [] arr, int key){
-    	 int i;
-    	 for(i=0;i<arr.length;i++){
-    		 if(arr[i]>key){
-    			 insertArr(arr,i,key);
-    			 break;
-    		 }else if(arr[i]==key)
-    			 break;
-    		 //如果arr[i]<key 一直成立，最后就return了arr.length作为下标了
-    	 }
-    	 return i;
-     }
      
-     public void insertArr(int [] arr, int location,int key){
-    	 int [] arrP = new int[arr.length+1];
-    	 for(int i=0;i<arrP.length;i++){
-    		 if(i==location)
-    			 arrP[i] = key;
-    		 else if(i<location)
-    			 arrP[i] = arr[i];
-    		 else{
-    			 arrP[i] = arr[i-1];
-    		 }
-    	 }
-    	 //问题来了，如何将n+1长度的数组传给长度为n的定长数组
-     }
+     
+    public int returnInsertPosition(int[] arr, int item) {
+        for (int i = 0; i < arr.length; i++) {
+            if (item <= arr[i]) {
+                return i;
+            }
+        }
+        return arr.length;
+    }
+     
+//    public int returnInsertPosition(int [] arr, int item) {
+//        for(int i=0; i< arr.length; i++) {
+//                 if(item == arr[i]){
+//                       return i;
+//                   } else if (item < arr[i]){
+//                       insertNewArray(arr, i, item);
+//                       return i;
+//                   } 
+//            }
+//            insertNewArray(arr, arr.length, item);
+//            return arr.length;
+//    }
+//
+//
+//    public void insertNewArray(int [] arr, int location, int key) {
+//            int [] newArr = new int[arr.length+1];
+//            int j = 0;
+//            for(int i=0; i<newArr.length; i++) {
+//                   if(i==location) {
+//                       newArr[i] = key;
+//                       continue;
+//                   }
+//                   newArr[i] = arr[j++];
+//            }
+//            arr = newArr; 
+//    }
      
 }

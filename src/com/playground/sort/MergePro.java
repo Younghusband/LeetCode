@@ -25,7 +25,7 @@ public class MergePro {
 	
 	public  void mergeSort(int[] a, int low, int high) {
 		MergeSort tool = new MergeSort();
-        int mid = low+(high-low)/2;   //试问为什么不用 mid = (low+high)/2
+        int mid = low+(high-low)/2;   //mid = (low+high)/2  有越界的风险
         if (low < high) {
         	// 右边
         	mergeSort(a, mid + 1, high);  //先排左侧还是先排右侧并无影响
