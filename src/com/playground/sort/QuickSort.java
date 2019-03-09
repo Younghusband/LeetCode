@@ -25,25 +25,24 @@ public class QuickSort {
 		
 		print(arr);
 	}
-	
-	
-    private static int partition(int []array,int lo,int hi){
-        //固定的切分方式
-        int key=array[lo];
-        while(lo<hi){
-            while(array[hi]>=key&&hi>lo){//从后半部分向前扫描 直到找到右侧小于基准数停止
-                hi--;
-            }
-            array[lo]=array[hi];
-            while(array[lo]<=key&&hi>lo){//从前半部分向后扫描
-                lo++;
-            }
-            array[hi]=array[lo];
-        }	
-        array[hi]=key;
-        return hi;
-        
-    }
+
+
+	private static int partition(int[] array, int lo, int hi) {
+		//固定的切分方式
+		int key = array[lo];
+		while (lo < hi) {
+			while (array[hi] >= key && hi > lo) {//从后半部分向前扫描 直到找到右侧小于基准数停止
+				hi--;
+			}
+			array[lo] = array[hi];
+			while (array[lo] <= key && hi > lo) {//从前半部分向后扫描
+				lo++;
+			}
+			array[hi] = array[lo];
+		}
+		array[hi] = key;
+		return hi;
+	}
     
     private static void sort(int[] array,int lo ,int hi){
 //    	print(array);
@@ -69,22 +68,22 @@ public class QuickSort {
 	 * @param max    数组最大值
 	 * @return
 	 */
-	public static int[] generateRandom(int nums, int min, int max){
-		int [] arr = new int[nums];  //初始化如此之大的数组
+	public static int[] generateRandom(int nums, int min, int max) {
+		int[] arr = new int[nums];  //初始化如此之大的数组
 		Random ran = new Random();
-		for(int i=0;arr[arr.length-1]==0;i++){
+		for (int i = 0; arr[arr.length - 1] == 0; i++) {
 			int temp = ran.nextInt(max);
 			boolean flag = false;
-			if(temp>=min&&temp<=max){
-				flag=!flag;   //为了降低无用操作
+			if (temp >= min && temp <= max) {
+				flag = !flag;   //为了降低无用操作
 			}
-			if(flag){  //校验元素是否在数组中已经存在,如果存在 继续下一次循环
-				checkAndAdd(arr,temp);
+			if (flag) {  //校验元素是否在数组中已经存在,如果存在 继续下一次循环
+				checkAndAdd(arr, temp);
 			}
 		}
 		System.out.println("生成的随机数数组:");
-		for(int i: arr)
-		   System.out.print(i+"->");
+		for (int i : arr)
+			System.out.print(i + "->");
 		return arr;
 	}
 	
@@ -95,16 +94,16 @@ public class QuickSort {
 	 * @param arr
 	 * @param target
 	 */
-	public static void checkAndAdd(int [] arr,int target){
+	public static void checkAndAdd(int[] arr, int target) {
 		int index = 0;
-		for(int i=0;i<arr.length;i++){
-			if(arr[i]==0){
-				arr[i]=target;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) {
+				arr[i] = target;
 				index = i;
-				System.out.println("在第"+(index+1)+"个位置上插入了随机数。");
+				System.out.println("在第" + (index + 1) + "个位置上插入了随机数。");
 				break;
 			}
-			if(arr[i]==target){
+			if (arr[i] == target) {
 				break;
 			}
 		}
