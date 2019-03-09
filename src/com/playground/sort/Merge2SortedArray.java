@@ -27,21 +27,21 @@ public class Merge2SortedArray {
 	
 	
 	/**
-	 * 非常美的代码  尤其是三元运算符那里
+	 * 更简洁，少了一个临时变量
 	 * */
-	public int [] sortArrPro(int [] arr1,int[] arr2){
-		int [] array = new int [arr1.length+arr2.length];
-		int i=0,j=0;
-		while(i<arr1.length&&j<arr2.length){  //两个数组都完整的时候出不了这个循环
-			array[i+j]=arr1[i]<arr1[j]?arr1[i++]:arr2[j++];
+	public int[] sortArrPro(int[] arr1, int[] arr2) {
+		int[] array = new int[arr1.length + arr2.length];
+		int i = 0, j = 0;
+		while (i < arr1.length && j < arr2.length) {  //两个数组都完整的时候出不了这个循环
+			array[i + j] = arr1[i] < arr1[j] ? arr1[i++] : arr2[j++];
 		}
-		while(i<arr1.length){  //数组1还没耗尽
-			array[i+j]=arr1[i++];
+		while (i < arr1.length) {  //数组1还没耗尽
+			array[i + j] = arr1[i++];
 		}
-		while(j<arr2.length){  //数组2还没耗尽
-			array[i+j]=arr2[j++];
+		while (j < arr2.length) {  //数组2还没耗尽
+			array[i + j] = arr2[j++];
 		}
-        return array;		
+		return array;
 	}
 	
 	

@@ -10,13 +10,5 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Main {
 
-    public static ConcurrentHashMap<String, AtomicInteger> concurrents = new ConcurrentHashMap<>();
-
-    public static void main(String[] args) {
-
-    }
-
-
-
 
 }

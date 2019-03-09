@@ -23,7 +23,7 @@ public class MergePro {
 		
 	}
 	
-	public  void mergeSort(int[] a, int low, int high) {
+	public void mergeSort(int[] a, int low, int high) {
 		MergeSort tool = new MergeSort();
         int mid = low+(high-low)/2;   //mid = (low+high)/2  有越界的风险
         if (low < high) {

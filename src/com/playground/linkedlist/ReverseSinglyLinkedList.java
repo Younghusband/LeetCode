@@ -64,11 +64,12 @@ public class ReverseSinglyLinkedList {
     	if(head==null||head.next ==null) { //空链表或者已经到链表末尾
             return head;
     	}
-        ListNode prev = reverseRe(head.next);
-        head.next.next = head;
-        head.next = null;
+        ListNode prev = reverseRe(head.next); // 对next下面的链表进行反转
+		head.next.next = head; // 反转当前节点
+        head.next = null; // 将当前节点与正向的下一个节点断开
         return prev;
 	}
-	
+
+
 	
 }
