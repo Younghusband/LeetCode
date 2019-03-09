@@ -106,27 +106,32 @@ public class MergeSort {
 		int[] arrTmp = new int[hi - lo + 1];
 
 		while (i <= mid && j <= hi) {
-			arrTmp[k++] = A[i] < A[j] ? A[i++] : A[j++];
+			if (A[i] <= A[j]) {
+				arrTmp[k++] = A[i++];
+			} else {
+				arrTmp[k++] = A[j++];
+			}
 		}
 
 		while (i <= mid) {
 			arrTmp[k++] = A[i++];
 		}
+
 		while (j <= hi) {
 			arrTmp[k++] = A[j++];
 		}
 
+		// copy
 		for (int x = 0; x < arrTmp.length; x++) {
 			A[lo++] = arrTmp[x];
 		}
-
 	}
 
 	public void mergeSort(int[] arr, int lo, int hi) {
-		int mid = lo + (hi - lo) / 2;
-		if (lo < hi) {
-			mergeSort(arr, 0, mid);
-			mergeSort(arr, mid + 1, hi);
+		int mid = lo + (hi-lo)/2;
+		if(lo<hi){
+			mergeSort(arr, lo, mid);
+			mergeSort(arr, mid+1, hi);
 			merge1(arr, lo, mid, hi);
 		}
 	}

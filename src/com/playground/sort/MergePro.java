@@ -36,7 +36,7 @@ public class MergePro {
             System.out.println(Arrays.toString(a));
         }
     }
-	
-	
+
+
 
 }

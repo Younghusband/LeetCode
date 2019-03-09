@@ -46,7 +46,7 @@ public class Merge_Two_Sorted_Lists {
     }
     
     /**
-     * 最好的方法
+     * 简洁的方法
      */
     public ListNode mergeTwoListsBest(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(-1);
@@ -72,7 +72,6 @@ public class Merge_Two_Sorted_Lists {
     public ListNode mergeTwoListsPro(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
         ListNode cur = dummyHead;
-
         while (l1 != null && l2 != null) {
             if (l1.val < l2.val) {
                 cur.next = l1;
