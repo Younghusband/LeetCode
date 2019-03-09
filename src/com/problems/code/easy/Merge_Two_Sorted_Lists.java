@@ -45,6 +45,29 @@ public class Merge_Two_Sorted_Lists {
         }
     }
     
+    /**
+     * 最好的方法
+     */
+    public ListNode mergeTwoListsBest(ListNode l1, ListNode l2) {
+        ListNode result = new ListNode(-1);
+        ListNode cursor = result;
+        ListNode tmp; // 用于保存未合并完 剩余的节点（要么全在l1, 要么全部在l2）
+        
+        while(l1!=null && l2!=null) {
+            if(l1.val<l2.val) {
+                cursor.next = l1;
+                l1 = l1.next;
+            } else {
+                cursor.next = l2;
+                l2 = l2.next;
+            }
+            cursor = cursor.next; // 记得将指针递进
+        }
+        tmp = l1 != null ? l1 : l2;
+        cursor.next = tmp;
+        return result.next;
+    }
+    
     
     public ListNode mergeTwoListsPro(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
@@ -53,13 +76,12 @@ public class Merge_Two_Sorted_Lists {
         while (l1 != null && l2 != null) {
             if (l1.val < l2.val) {
                 cur.next = l1;
-                cur = cur.next;
                 l1 = l1.next;
             } else {
                 cur.next = l2;
-                cur = cur.next;
                 l2 = l2.next;
             }
+            cur = cur.next;
         }
         if (l1 == null) {
             cur.next = l2;
@@ -68,18 +90,5 @@ public class Merge_Two_Sorted_Lists {
         }
         return dummyHead.next;
     }
-    
-    
-    /**
-     * 最好的方法
-     */
-    public ListNode mergeTwoListsBest(ListNode l1, ListNode l2) {
-        
-        
-        return null;
-    }
-    
-    
-    
 
 }
