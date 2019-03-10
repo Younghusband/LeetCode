@@ -34,10 +34,11 @@ public class InsertionSort {
 	
 	public void insertSort(int [] arr){
 		int location = 0;
+		int target = 0;
 		for(int i=1;i<arr.length;i++){  //数组大小小于2则不进行任何操作
 			//标的， 标的左侧为排序好的内容。
 			location = i;
-			int target = arr[i];    //将标的存储起来
+			target = arr[i];    //将标的存储起来
 			for(int j=i-1;j>=0;j--){
 				if(target>=arr[j])
 				    break;
@@ -46,7 +47,9 @@ public class InsertionSort {
 					location = j;
 				}
 			}  //内层循环确定了location的位置，然后外层循环将存储的值赋给location位置
-			arr[location] = target;
+			if(location != i){
+				arr[location] = target;
+			}
 		}
 	}
 	

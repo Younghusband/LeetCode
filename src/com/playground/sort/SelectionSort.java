@@ -28,8 +28,7 @@ public class SelectionSort {
 	}
 	
     public void selectionSort(int[] arr) {
-        int location = 0; // 尽量不要在for循环中初始化变量
-        int temp = 0;
+        int location; // 尽量不要在for循环中初始化变量
         for (int i = 0; i < arr.length - 1; i++) { // 第一个位置~倒数第二个位置的选址  一共n-1轮
             location = i;
             for (int j = i + 1; j < arr.length; j++) { // 每一轮记录选择最小元素的地址
@@ -37,10 +36,11 @@ public class SelectionSort {
                     location = j;
                 }
             }
+            // swap
             if(location != i) {
-                temp = arr[i];
-                arr[i] = arr[location];
-                arr[location] = temp;
+                arr[i] = arr[i] + arr[location];
+                arr[location] = arr[i] - arr[location];
+                arr[i] = arr[i] - arr[location];
             }
         }
     }
