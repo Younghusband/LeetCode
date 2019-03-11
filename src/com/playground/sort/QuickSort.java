@@ -18,14 +18,12 @@ public class QuickSort {
 		QuickSort sort = new QuickSort();
 
 		int[] arr = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
-
 		sort.quickSort(arr);
-
 		print(arr);
 	}
 
 
-	public int partition(int[] array, int lo, int hi) {
+	public int partion(int[] array, int lo, int hi) {
 		//固定的切分方式
 		int key = array[lo];
 		while (lo < hi) {
@@ -45,7 +43,7 @@ public class QuickSort {
 	public void sort(int[] array, int lo, int hi) {
 //    	print(array);
 		if (lo < hi) {
-			int index = partition(array, lo, hi);
+			int index = partion(array, lo, hi);
 			sort(array, lo, index - 1);
 			sort(array, index + 1, hi);   //先排左边先排右边无所谓
 		}
