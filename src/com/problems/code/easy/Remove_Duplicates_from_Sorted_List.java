@@ -1,6 +1,6 @@
 package com.problems.code.easy;
 
-
+import com.problems.code.ListNode;
 /************************************************
     * Description: 
     *    Given a sorted linked list, delete all duplicates such that each element appear only once.

@@ -1,4 +1,4 @@
-package com.problems.code.easy;
+package com.problems.code.medium;
 
 /**
  * @author mr_yo

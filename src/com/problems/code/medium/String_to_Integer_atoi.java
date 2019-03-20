@@ -1,4 +1,4 @@
-package com.problems.code.easy;
+package com.problems.code.medium;
 /************************************************
     * Description: 
     *    Implement atoi to convert a string to an integer.

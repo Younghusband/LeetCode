@@ -43,6 +43,8 @@ public class AtomicUse {
 			t.start();
 		}
 		
+		String xxx = "";
+		
 	}
 	
 

@@ -4,12 +4,7 @@ package com.playground.thread;
  * @author vermouth.Mac
  * @version 2018年2月3日 下午9:45:36
  * 
- *   业务脏读
- *   思考
- *   1. 为什么get方法加了synchronized就不会脏读了呢
- *      
- *      答: 是不是因为对于一个对象来说，对象内的所有带有synchronized的方法都共享一把锁 
- *          详见test()方法，如果主线程调用test()方法滞后了3秒，就说明是这个道理。
+ *   脏读
  *   
  */
 

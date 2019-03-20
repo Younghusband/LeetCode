@@ -1,4 +1,4 @@
-package com.problems.code.easy;
+package com.problems.code.medium;
 
 import java.util.Random;
 

@@ -3,6 +3,8 @@ package com.problems.code.easy;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.problems.code.ListNode;
+
 /**
  * @author mr_yo
  * 

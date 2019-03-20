@@ -16,6 +16,8 @@ package com.problems.code.easy;
  * 
  * @author vermouth.Mac
  * @version 2017年2月24日 下午10:40:39
+ * 
+ * 他妈的阿里考过这个弱智题目
  */
 
 public class Search_Insert_Position {

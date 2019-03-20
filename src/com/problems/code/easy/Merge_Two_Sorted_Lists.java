@@ -1,4 +1,7 @@
 package com.problems.code.easy;
+
+import com.problems.code.ListNode;
+
 /************************************************
     * Description: 
     * 
@@ -8,14 +11,6 @@ package com.problems.code.easy;
     * 1. 递归方式
     * 2. 利用哑节点头
 **************************************************/
-
-class ListNode{
-	int val;
-	ListNode next;
-	ListNode(int x){
-		val = x;
-	}
-}
 
 public class Merge_Two_Sorted_Lists {
 	

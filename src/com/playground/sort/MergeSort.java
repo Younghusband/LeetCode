@@ -17,9 +17,11 @@ public class MergeSort {
 	
 	public static void main(String[] args) {
 		
-		  int[] array = {
-	                9, 1, 5, 3, 4, 2, 6, 8, 7
-	        };
+//		  int[] array = {
+//	                9, 1, 5, 3, 4, 2, 6, 8, 7
+//	        };
+	      
+	      int[] array = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
 		  
 		  MergeSort x = new MergeSort();
 		  System.out.print("排序前:\t");

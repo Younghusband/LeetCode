@@ -31,7 +31,6 @@ public class UseLinkedHashMapCache<X,V> extends LinkedHashMap<X,V>{
         cache.put(2, "two");
         cache.put(3, "three");
 		
-		
 //		
 //		for(Integer key : cache.keySet()){
 //			   System.out.println("Key:\t"+key);
