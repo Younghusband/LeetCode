@@ -15,7 +15,7 @@ import java.util.List;
 
 public class FilterChain implements Filter{ 
 	
-	private List<Filter> chain = new ArrayList<Filter>();;
+	private List<Filter> chain = new ArrayList<>();;
 	
 	public FilterChain add(Filter f){
 		this.chain.add(f);

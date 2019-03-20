@@ -18,6 +18,8 @@ package com.problems.code.easy;
  * @version 2017年2月24日 下午10:40:39
  * 
  * 他妈的阿里考过这个弱智题目
+ * 
+ * 这题的核心就在于想到二分查找就行了。。
  */
 
 public class Search_Insert_Position {
@@ -33,9 +35,40 @@ public class Search_Insert_Position {
 	}
 	
 	
-	   public int searchInsert(int[] nums, int target) {
-	      for(int i=0;i<nums.length;i++)
-	    	  if(nums[i]>=target) return i;
-	      return nums.length;
-	    }
+	/**
+	 * brute-force 
+	 * 单纯的遍历到底
+	 */
+    public int searchInsert(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++)
+            if (nums[i] >= target)
+                return i;
+        return nums.length;
+    }
+    
+    
+    /**
+     * 二分法查找合适的位置
+     */
+    public int searchInsertPro(int[] nums, int target) {
+        int lo = 0;
+        int hi = nums.length-1;
+        int mid = 0;
+        while(hi >= lo) {
+            mid = (lo+hi) >>> 1;
+            if(nums[mid] == target) {
+                return mid;
+            }else if(nums[mid] < target) {
+                lo = mid + 1;
+            }else if(nums[mid] > target) {
+                hi = mid - 1;
+            }
+        }
+        return lo;  // 想想为啥return lo
+    }
+	
+	
+	   
+	   
+	   
 }

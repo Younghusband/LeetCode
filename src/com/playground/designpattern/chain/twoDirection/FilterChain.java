@@ -13,7 +13,7 @@ public class FilterChain implements Filter{
     
 	private Request request;
 	private Response response;
-	List<Filter> chain = new ArrayList<Filter>();
+	List<Filter> chain = new ArrayList<>();
 	
 	int index;
 	public FilterChain(){

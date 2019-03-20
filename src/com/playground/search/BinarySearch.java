@@ -18,8 +18,7 @@ import com.playground.sort.QuickSort;
  * 
  */
 
-public class BinarySearch1 {
-	
+public class BinarySearch {
 	public static void main(String[] args) {
 		int [] arr = {1,2,3,4,5,6,7,8,9,10};
 		
@@ -29,7 +28,6 @@ public class BinarySearch1 {
 		
 		int key = binarySearchRecur(arr,target,0,arr.length-1);
 		System.out.println(target+"的位置在:\t"+key);
-		
 	}
 	
 	
