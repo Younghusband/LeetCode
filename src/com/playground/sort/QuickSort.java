@@ -16,7 +16,6 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		QuickSort sort = new QuickSort();
-
 		int[] arr = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
 		sort.quickSort(arr);
 		print(arr);
@@ -26,7 +25,7 @@ public class QuickSort {
 	public int partion(int[] array, int lo, int hi) {
 		//固定的切分方式
 		int key = array[lo];
-		while (lo < hi) {
+		while (hi > lo) {
 			while (array[hi] >= key && hi > lo) {//从后半部分向前扫描 直到找到右侧小于基准数停止
 				hi--;
 			}
@@ -41,14 +40,12 @@ public class QuickSort {
 	}
 
 	public void sort(int[] array, int lo, int hi) {
-//    	print(array);
 		if (lo < hi) {
 			int index = partion(array, lo, hi);
 			sort(array, lo, index - 1);
 			sort(array, index + 1, hi);   //先排左边先排右边无所谓
 		}
 	}
-
 
 	public void quickSort(int[] arr) {
 		sort(arr, 0, arr.length - 1);  //调用方式类似 Arrays.sort

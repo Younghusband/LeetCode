@@ -26,8 +26,7 @@ public class MergeSort {
 		  MergeSort x = new MergeSort();
 		  System.out.print("排序前:\t");
 		  x.print(array);
-//		  x.mergeSort(array);
-		  x.mergeSort(array, 0, array.length-1);
+		  x.mergeSort(array);
 		  System.out.print("排序后:\t");
 		  x.print(array);
 		  
@@ -36,30 +35,29 @@ public class MergeSort {
 	
 	
 	//总方法
-//	public void mergeSort(int[] arr){
-//		for (int gap = 1; gap < arr.length; gap = gap * 2) {  //粒度从1开始合并
-//			mergeArrays(arr, gap, arr.length);
-//			System.out.print("gap=" + gap + ":\t");
-//			print(arr);
-//		}
-//	}
-//
-//
-//	//不断的合并所有子数组的方法
-//	public void mergeArrays(int [] arr,int gap,int length){
-//		int i = 0;   //整个方法共享
-//		for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
-//			merge(arr, i, i + gap - 1, i + 2 * gap - 1);   //把相邻两段长度均为gap的排序好的数组合并
-//		}
-//
-//		//如果剩下一个数组不够gap
-//		if (i + gap - 1 < length) {
-//			merge(arr, i, i + gap - 1, length - 1);
-//		}
-//
-//	}
-//
-//
+	public void mergeSort(int[] arr){
+		for (int gap = 1; gap < arr.length; gap = gap * 2) {  //粒度从1开始合并
+			mergeArrays(arr, gap, arr.length);
+			System.out.print("gap=" + gap + ":\t");
+			print(arr);
+		}
+	}
+
+
+	//不断的合并所有子数组的方法
+	public void mergeArrays(int [] arr,int gap,int length){
+		int i = 0;   //整个方法共享
+		for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
+			merge(arr, i, i + gap - 1, i + 2 * gap - 1);   //把相邻两段长度均为gap的排序好的数组合并
+		}
+
+		//如果剩下一个数组不够gap
+		if (i + gap - 1 < length) {
+			merge(arr, i, i + gap - 1, length - 1);
+		}
+
+	}
+	
 	//将lo~mid  mid+1~hi 这两段排序 然后重新赋值进arr
 	public void merge(int [] arr, int lo, int mid, int hi){
 		int i = lo;       //第一段数组下标
@@ -94,50 +92,6 @@ public class MergeSort {
 		}
 		System.out.println();
 	}
-
-
-
-	// ----------- practice field -----------
-
-	// lo~mid, mid+1~hi
-	public void merge1(int[] A, int lo, int mid, int hi) {
-		int i = lo;
-		int j = mid + 1;
-		int k = 0;
-
-		int[] arrTmp = new int[hi - lo + 1];
-
-		while (i <= mid && j <= hi) {
-			if (A[i] <= A[j]) {
-				arrTmp[k++] = A[i++];
-			} else {
-				arrTmp[k++] = A[j++];
-			}
-		}
-
-		while (i <= mid) {
-			arrTmp[k++] = A[i++];
-		}
-
-		while (j <= hi) {
-			arrTmp[k++] = A[j++];
-		}
-
-		// copy
-		for (int x = 0; x < arrTmp.length; x++) {
-			A[lo++] = arrTmp[x];
-		}
-	}
-
-	public void mergeSort(int[] arr, int lo, int hi) {
-		int mid = lo + (hi-lo)/2;
-		if(lo<hi){
-			mergeSort(arr, lo, mid);
-			mergeSort(arr, mid+1, hi);
-			merge1(arr, lo, mid, hi);
-		}
-	}
-
 	
 
 }

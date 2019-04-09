@@ -32,26 +32,23 @@ public class InsertionSort {
 	}
 	
 	
-	public void insertSort(int [] arr){
-		int location = 0;
-		int target = 0;
-		for(int i=1;i<arr.length;i++){  //数组大小小于2则不进行任何操作
-			//标的， 标的左侧为排序好的内容。
-			location = i;
-			target = arr[i];    //将标的存储起来
-			for(int j=i-1;j>=0;j--){
-				if(target>=arr[j])
-				    break;
-				else{ //如果 i位置的元素小于j位置的，记录i位置的元素该插入的位置location，同时将数组向后平移
-					arr[j+1]=arr[j];
-					location = j;
-				}
-			}  //内层循环确定了location的位置，然后外层循环将存储的值赋给location位置
-			if(location != i){
-				arr[location] = target;
-			}
-		}
-	}
+    public void insertSort(int[] arr) {
+        int location = 0;
+        int target = 0;
+        for (int i = 1; i < arr.length; i++) {
+            location = i;
+            target = arr[i]; //将标的存储起来
+            for (int j = i - 1; j >= 0; j--) {
+                if (target >= arr[j])
+                    break;
+                else { //如果 i位置的元素小于j位置的，记录i位置的元素该插入的位置location，同时将数组向后平移
+                    arr[j + 1] = arr[j];
+                    location = j;
+                }
+            } //内层循环确定了location的位置，然后外层循环将存储的值赋给location位置
+            arr[location] = target; // location一定不等于i
+        }
+    }
 	
 	public void sortArr(int[] arr) {  //这个和上面的方法没有区别
         for(int i=1;i<arr.length;i++){

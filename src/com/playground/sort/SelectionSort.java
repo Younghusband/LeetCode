@@ -37,7 +37,7 @@ public class SelectionSort {
                 }
             }
             // swap
-            if(location != i) {
+            if(location != i) { // 异或交换不适用于俩相同引用的元素交换
                 arr[i] = arr[i] + arr[location];
                 arr[location] = arr[i] - arr[location];
                 arr[i] = arr[i] - arr[location];

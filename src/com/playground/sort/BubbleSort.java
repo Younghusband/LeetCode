@@ -26,7 +26,6 @@ package com.playground.sort;
  ********************************************/
 
 public class BubbleSort {
-     
 	
 	public static void main(String[] args) {
 		int [] arr = {4,3,2,1,5,6,8,7};
@@ -34,17 +33,21 @@ public class BubbleSort {
 		print(arr);
 	}
 	
-	public static void bubble(int [] arr){
-		for(int i=0;i<arr.length-1;i++){
-			for(int j=0;j<arr.length-1-i;j++){
-				if(arr[j]>arr[j+1]){  //由于j!=j+1 所以放心大胆使用异或交换
-					arr[j] = arr[j]^arr[j+1];
-					arr[j+1] = arr[j]^arr[j+1];
-					arr[j] = arr[j]^arr[j+1];
-				}
-			}
-		}
-	}
+    public static void bubble(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean hasSwitch = false;
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) { //由于j!=j+1 所以放心大胆使用异或交换
+                    hasSwitch = true;
+                    arr[j] = arr[j] ^ arr[j + 1];
+                    arr[j + 1] = arr[j] ^ arr[j + 1];
+                    arr[j] = arr[j] ^ arr[j + 1];
+                }
+            }
+            if (!hasSwitch)
+                break;  // 某轮冒泡没有元素交换，终止冒泡排序流程
+        }
+    }
 	
 	public static void print(int [] arr){
 		
