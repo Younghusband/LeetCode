@@ -7,9 +7,7 @@ package com.playground.sort;
  * 
  * 归并排序
  * 
- * 讲起来比较复杂，就写在博客里了。
- * 
- * 
+ * 分而治之
  * 
  */
 
@@ -20,9 +18,7 @@ public class MergeSort {
 //		  int[] array = {
 //	                9, 1, 5, 3, 4, 2, 6, 8, 7
 //	        };
-	      
 	      int[] array = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
-		  
 		  MergeSort x = new MergeSort();
 		  System.out.print("排序前:\t");
 		  x.print(array);
@@ -66,11 +62,7 @@ public class MergeSort {
 		int[] arrayTemp = new int[hi - lo + 1];  //临时数组的长度
 
 		while (i <= mid && j <= hi) {
-			if (arr[i] <= arr[j]) {
-				arrayTemp[k++] = arr[i++];
-			} else {
-				arrayTemp[k++] = arr[j++];
-			}
+			arrayTemp[k++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
 		}
 		//下面两个while只有可能进入一个
 		while (i <= mid) {  //后半段用完的情况
@@ -80,8 +72,9 @@ public class MergeSort {
 			arrayTemp[k++] = arr[j++];
 		}
 		//!!!!! 最后要把这个临时数组的值复制到数组中
-		for (int x = 0; x < arrayTemp.length; x++) {
-			arr[lo++] = arrayTemp[x];
+		k = 0;
+		while (lo<=hi) {
+			arr[lo++] = arrayTemp[k++];
 		}
 	}
 	

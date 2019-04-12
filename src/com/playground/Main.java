@@ -19,10 +19,11 @@ public class Main {
         
 //        int[] arr = {1, 2, 3, 4, 5, 6, 7};
         
-        sort.sort(arr, 0, arr.length-1);
+//        sort.sort(arr, 0, arr.length-1);
         print(arr);
         
     }
+    
     
     
    
