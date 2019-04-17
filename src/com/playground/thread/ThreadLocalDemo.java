@@ -10,7 +10,7 @@ package com.playground.thread;
  */
 
 public class ThreadLocalDemo {
-	public ThreadLocal<String> th = new ThreadLocal<String>();
+	public ThreadLocal<String> th = new ThreadLocal<>();
 	public void set(String str){  
 		th.set(str);
 	}
