@@ -1,5 +1,6 @@
 package com.playground;
 
+import java.util.LinkedHashSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,6 +11,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Main {
 
+    
+    private LinkedHashSet<String> localQueue; 
+    
 
     public static void main(String[] args) {
         Main sort = new Main();
@@ -20,7 +24,12 @@ public class Main {
 //        int[] arr = {1, 2, 3, 4, 5, 6, 7};
         
 //        sort.sort(arr, 0, arr.length-1);
-        print(arr);
+//        print(arr);
+        
+//        System.out.println(sort.localQueue.size());
+        System.out.println(null != sort.localQueue);
+//        System.out.println("--------");
+        
         
     }
     

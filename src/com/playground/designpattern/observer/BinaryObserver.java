@@ -2,8 +2,8 @@ package com.playground.designpattern.observer;
 
 public class BinaryObserver extends Observer {
 
-    public BinaryObserver(Subject subject) {
-        this.sb = subject;
+    public BinaryObserver(BeWatched watched) {
+        this.sb = watched;
         this.sb.attach(this);
     }
     

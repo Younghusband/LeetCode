@@ -2,8 +2,8 @@ package com.playground.designpattern.observer;
 
 public class OctalObserver extends Observer{
 
-    public OctalObserver(Subject subject) {
-        this.sb = subject;
+    public OctalObserver(BeWatched watched) {
+        this.sb = watched;
         this.sb.attach(this);
     }
     

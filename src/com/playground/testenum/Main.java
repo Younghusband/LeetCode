@@ -19,7 +19,7 @@ public class Main {
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.setType(TypeEnum.IN_PROCESS_2);
-		
+		System.out.println(Type.B.getType());
 	}
 	
 	

@@ -11,11 +11,11 @@ import lombok.Getter;
  * 
  * point 1: observed
  */
-public class Subject {
+public class BeWatched {
     
     List<Observer> oblist = new ArrayList<>();
     
-    public Subject() {
+    public BeWatched() {
         state = 1;
     }
     
