@@ -1,9 +1,14 @@
 package com.playground;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
 
 /**
  * @author mr_yo
@@ -13,6 +18,8 @@ public class Main {
 
     
     private LinkedHashSet<String> localQueue; 
+    
+    private Map map;
     
 
     public static void main(String[] args) {
@@ -29,7 +36,11 @@ public class Main {
 //        System.out.println(sort.localQueue.size());
         System.out.println(null != sort.localQueue);
 //        System.out.println("--------");
+        Iterator it  = sort.map.entrySet().iterator();
         
+        while(it.hasNext()) {
+            
+        }
         
     }
     
