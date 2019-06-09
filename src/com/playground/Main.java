@@ -25,17 +25,14 @@ public class Main {
     public static void main(String[] args) {
         Main sort = new Main();
 //        int[] arr = {6, 1, 2, 7, 9, 3, 4, 5, 10, 8};
-        
         int[] arr = { 9, 1, 5, 3, 4, 2, 6, 8, 7};
+//      int[] arr = {1, 2, 3, 4, 5, 6, 7};
+//      sort.sort(arr, 0, arr.length-1);
+//      print(arr);
         
-//        int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        
-//        sort.sort(arr, 0, arr.length-1);
-//        print(arr);
-        
-//        System.out.println(sort.localQueue.size());
+//      System.out.println(sort.localQueue.size());
         System.out.println(null != sort.localQueue);
-//        System.out.println("--------");
+//      System.out.println("--------");
         Iterator it  = sort.map.entrySet().iterator();
         
         while(it.hasNext()) {

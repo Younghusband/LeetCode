@@ -6,7 +6,8 @@ package com.playground.designpattern.singleton;
  * 
  * 饿汉式  不存在线程不安全问题
  * 
- * 这种方式基于classloder机制避免了多线程的同步问题，不过，instance在类装载时就实例化，这时候初始化instance显然没有达到lazy loading的效果。
+ * 这种方式基于classloder机制避免了多线程的同步问题。
+ * 不过，instance在类装载时就实例化，这时候初始化instance显然没有达到lazy loading的效果。
  * 
  * 问题来了，为啥要lazy loading这种效果呢？
  * 
@@ -16,22 +17,19 @@ package com.playground.designpattern.singleton;
  * 
  */
 
-public class SingletonDemo4 {
-	private static SingletonDemo4 instance = new SingletonDemo4();
+public class SingletonHungry {
+	private static SingletonHungry instance = new SingletonHungry();
 	//或者下面这种写法，感觉没有区别
 	/***
-	private static SingletonDemo4 instance = null;
+	private static SingletonHungry instance = null;
 	static{
-		instance = new SingletonDemo4();
+		instance = new SingletonHungry();
 	}   ***/
-	
-	
-	private SingletonDemo4(){}
-	
-	public static SingletonDemo4 getInstance(){
+
+	private SingletonHungry(){}
+	public static SingletonHungry getInstance(){
          return instance;		
 	}
-
 }
 
 

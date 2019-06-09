@@ -14,6 +14,6 @@ package com.playground.designpattern.singleton;
  * 
  */
 
-     public enum EasySingleton {
+     public enum SingletonEnum {
          INSTANCE;      //然而枚举究竟是什么，怎么用呢。。。
     }
