@@ -18,7 +18,6 @@ public class BitwiseCalculator {
         System.out.printf("减法，%s\n", a.minus(10, 5));
         System.out.printf("乘法，%s\n", a.multiply(10, -5));
         System.out.printf("乘法pro，%s\n", a.multiplyPro(10, -5));
-
         System.out.printf("除法，%s\n", a.divide(10, 5));
         System.out.printf("除法pro，%s\n", a.dividePro(10, -5));
 
