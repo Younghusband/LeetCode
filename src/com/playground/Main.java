@@ -1,13 +1,6 @@
 package com.playground;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -16,9 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Main {
 
-    
-    private LinkedHashSet<String> localQueue; 
-    
     private Map map;
     
 
@@ -28,30 +18,29 @@ public class Main {
         int[] arr = { 9, 1, 5, 3, 4, 2, 6, 8, 7};
 //      int[] arr = {1, 2, 3, 4, 5, 6, 7};
 //      sort.sort(arr, 0, arr.length-1);
-//      print(arr);
-        
-//      System.out.println(sort.localQueue.size());
-        System.out.println(null != sort.localQueue);
-//      System.out.println("--------");
-        Iterator it  = sort.map.entrySet().iterator();
-        
-        while(it.hasNext()) {
-            
-        }
-        
-    }
-    
-    
-    
-   
-    
+//        sort.sort(arr);
+//        sort.print(arr);
 
-    
-    public static void print(int [] arr){
+//        System.out.println("Xmx=" + Runtime.getRuntime().maxMemory() / 1024.0 / 1024 + "M");     //系统的最大空间
+//        System.out.println("free mem=" + Runtime.getRuntime().freeMemory() / 1024.0 / 1024 + "M");   //系统的空闲空间
+//        System.out.println("total mem=" + Runtime.getRuntime().totalMemory() / 1024.0 / 1024 + "M");   //当前可用的总空间
+
+        byte [] bArr = null;
+//        for(int i = 0; i< 10; i++)
+//            b = new byte[1*1024*1024];
+
+
+    }
+
+
+
+    public static void print(int [] arr) {
         System.out.println("\n>>>>>>>>>>>>>>>>>排序后的数组>>>>>>>>>>>>>>>>>");
         for(int i: arr)
             System.out.print(i+"->");
         System.out.print("\n");
     }
+
+
 
 }

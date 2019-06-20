@@ -15,8 +15,13 @@ public class BitwiseCalculator {
         System.out.printf("加法(递归方式), %s\n", a.addByRecursive(5, 6));
         System.out.printf("加法(迭代方式), %s\n", a.addByIteration(5, 6));
 
-        System.out.printf("减法，%s\n", a.minus(10, 5)); // 10 - 5
-        System.out.printf("乘法，%s\n", a.multiply(10, -5)); // 10 * 5
+        System.out.printf("减法，%s\n", a.minus(10, 5));
+        System.out.printf("乘法，%s\n", a.multiply(10, -5));
+        System.out.printf("乘法pro，%s\n", a.multiplyPro(10, -5));
+
+
+        System.out.printf("除法，%s\n", a.divide(10, 5));
+        System.out.printf("除法pro，%s\n", a.dividePro(10, -5));
 
     }
 
@@ -78,6 +83,85 @@ public class BitwiseCalculator {
         return product;
     }
 
+    /** 
+     * @Description: 位运算乘法 优化版
+     *               优化了当乘号右侧的数非常大的时候的累加次数
+     *
+     * @Date: 2019/6/10 21:22
+     */
+    public int multiplyPro(int a, int b) {
+        int multiplicand = a >= 0 ? a : addByIteration(~a, 1);
+        int multiplier = b >= 0 ? b : addByIteration(~b, 1);
+
+        int product = 0;
+
+        while(multiplier > 0) {
+            if((multiplier & 1) == 1) {
+                product = addByIteration(product, multiplicand);
+            }
+            multiplicand <<= 1;
+            multiplier >>= 1;
+        }
+
+        if((a ^ b) < 0){
+            product = addByIteration(~product, 1);
+        }
+        return product;
+    }
+
+    /**
+     * @Description: 位运算实现除法
+     * @Date: 2019/6/10 21:33
+     */
+    public int divide(int a, int b) {
+        if(b == 0)
+            throw new RuntimeException("除数不能为零。");
+        if(a == 0)
+            return a;
+
+        int dividend = a > 0 ? a : addByIteration(~a, 1);
+        int divisor = b > 0 ? b : addByIteration(~b, 1);
+
+        int quotient = 0;
+//        int reminder = 0;
+        while(dividend >= divisor) {
+            quotient = addByIteration(quotient, 1);
+            dividend = minus(dividend, divisor);
+        }
+
+        if((a^b) < 0) {
+            quotient = addByIteration(~quotient, 1);
+//            reminder = addByIteration(~dividend, 1);
+        }
+
+        return quotient;
+    }
+    
+    /** 
+     * @Description: 位运算除法，优化的是除数远小于被除数时过多的减法运算
+     * @Date: 2019/6/10 21:52
+     */
+    public int dividePro(int a, int b) {
+        if (b == 0)
+            throw new RuntimeException("除数不能为零。");
+        if (a == 0)
+            return 0;
+
+        int dividend = a > 0 ? a : addByIteration(~a, 1);
+        int divisor = b > 0 ? b : addByIteration(~b, 1);
+
+        int quotient = 0;
+        for (int i = 31; i >= 0; i--) { // 减小步长，上来就用最大步长来减
+            if ((dividend >> i) >= divisor) {
+                quotient = addByIteration(quotient, 1 << i);
+                dividend = minus(dividend, divisor << i);
+            }
+        }
+        if ((a ^ b) < 0) {
+            quotient = addByIteration(~quotient, 1);
+        }
+        return quotient;
+    }
 
 
 
