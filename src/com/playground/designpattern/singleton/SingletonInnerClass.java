@@ -21,26 +21,10 @@ package com.playground.designpattern.singleton;
 public class SingletonInnerClass {
 	private static class SingletonHolder {
 		private static SingletonInnerClass Instance = new SingletonInnerClass();
-		static {
-			System.out.println("SingletonHolder static block.");
-		}
 	}
-
-	static{
-		System.out.println("SingletonInnerClass static block.");
-	}
-
 	private SingletonInnerClass() {}
 	public static SingletonInnerClass getInstance() { //这个方法是不需要final的 因为实际上也不能被继承
 		return SingletonHolder.Instance;
-	}
-
-	public static void display() {
-		System.out.println("通过非单例方法获取单例: " + SingletonHolder.Instance);
-	}
-
-	public String toString() {
-		return getClass().getSimpleName();
 	}
 }
 

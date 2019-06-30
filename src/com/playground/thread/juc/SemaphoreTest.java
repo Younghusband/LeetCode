@@ -1,4 +1,4 @@
-package com.playground.thread.concurrent;
+package com.playground.thread.juc;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,15 +29,14 @@ public class SemaphoreTest {
 	public static void main(String[] args) {
 		ExecutorService pool = Executors.newFixedThreadPool(THREAD_NUM);  //10个线程
 		Semaphore s = new Semaphore(3);   //3个坑位
-		
-		
-		for(int i=1;i<=THREAD_NUM;i++){
+
+
+		for (int i = 1; i <= THREAD_NUM; i++) {
 			pool.execute(new SourceThread(s));
 		}
 		
 		try {
 			TimeUnit.SECONDS.sleep(30);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -50,7 +49,6 @@ public class SemaphoreTest {
 				System.out.println("所有的子线程都结束了！");
 				break;
 			}
-
 		}
 	}
 	

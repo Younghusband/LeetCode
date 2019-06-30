@@ -1,4 +1,4 @@
-package com.playground.thread.concurrent;
+package com.playground.thread.juc;
 
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package com.playground.thread.concurrent;
+package com.playground.thread.juc;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -52,12 +52,12 @@ public class CountDownLatchTest {
 	public static void main(String[] args){
 		ExecutorService cachePool = Executors.newFixedThreadPool(THREAD_NUM);
 		final CountDownLatch latch = new CountDownLatch(THREAD_NUM);
-		for(int i=1;i<=THREAD_NUM;i++){
-			cachePool.execute(new TestTask(latch,i));
+		for (int i = 1; i <= THREAD_NUM; i++) {
+			cachePool.execute(new TestTask(latch, i));
 		}
 		
 		try {
-			latch.await();
+			latch.await(); // 10个线程执行完毕后悔调用下面
 			CountDownLatchTest.print(">>>>>Continued...");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

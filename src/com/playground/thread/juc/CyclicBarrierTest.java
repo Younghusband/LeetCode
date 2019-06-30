@@ -1,4 +1,4 @@
-package com.playground.thread.concurrent;
+package com.playground.thread.juc;
 
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
@@ -7,11 +7,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description 
- * @author vermouth.Mac
- * @version 2018年3月18日 下午8:03:31
- * 
- * 
  * CyclicBarrier 用法初尝试  结合王者荣耀
  * 
  * 王者峡谷5个人，不集合之前都是await()  所有人都await()之后开始团战，代码接着走
@@ -38,11 +33,10 @@ public class CyclicBarrierTest {
 		});
 		
 //		PrepareTask task = new PrepareTask(barrier);
-		
-		for(int i=1;i<=THREAD_NUM;i++){
+
+		for (int i = 1; i <= THREAD_NUM; i++) {
 			pool.execute(new PrepareTask(barrier));
 //			pool.execute(task);   //多个runnable启动线程，和一个runnable怼进多个线程有什么区别？
-			
 		}
 		
 		try {
@@ -65,14 +59,15 @@ public class CyclicBarrierTest {
 
 }
 
-class PrepareTask implements Runnable{
+class PrepareTask implements Runnable {
 	private CyclicBarrier c;
 	Random r;
-	public PrepareTask(CyclicBarrier c){
+
+	public PrepareTask(CyclicBarrier c) {
 		this.c = c;
 		r = new Random();
 	}
-	
+
 	@Override
 	public void run() {
 		try {
@@ -85,6 +80,6 @@ class PrepareTask implements Runnable{
 		}
 		System.out.println("团战结束，各自发育。。。");
 	}
-	
-	
+
+
 }

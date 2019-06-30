@@ -21,8 +21,6 @@ public class Main {
             }
         };
 
-        SingletonInnerClass.display();
-
         Thread t1 = new Thread(r, "t1");
         Thread t2 = new Thread(r, "t2");
         Thread t3 = new Thread(r, "t3");
