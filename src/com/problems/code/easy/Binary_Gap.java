@@ -15,7 +15,10 @@ package com.problems.code.easy;
  * 
  * 通过这道题学到的:
  * 1. 通过右移的方式能够不断的获取10进制数字的各个2进制位(而不用将10进制转换为2进制）
- * 2. 
+ *
+ * 2020.1.10
+ * 1. 纠正方法#binaryGapByIndex的根本性错误, 并优化。
+ * 2. 删除弱智解法
  */
 public class Binary_Gap {
     
@@ -29,13 +32,13 @@ public class Binary_Gap {
     public int binaryGapByIndex(int N) {
         int [] bitArr = new int[32]; // 极端情况下会占满, 即32位各位上都是‘1’
         int t = 0;
-        for(int i=0; i<32; i++) 
-            if (((N >> i) & 1) != 0)  // key code
+        for(int i = 0; i < 32; i++)
+            if (((N >> i) & 1) != 0)  // key code 该位有值且为1
                 bitArr[t++] = i;
         
         int gap = 0;
-        for(int i=0; i<t-1; i++) {
-            gap = Math.max(bitArr[i+1], bitArr[i]);
+        for(int i = 0; i < t-1; i++) {
+            gap = Math.max(bitArr[i+1] - bitArr[i], gap);
         }
         return gap;
     }
@@ -59,49 +62,9 @@ public class Binary_Gap {
     
     public static void main(String[] args) {
         Binary_Gap service = new Binary_Gap();
-        service.binaryToDecimal(20);
+        service.binaryGapByLast(22);
     }
     
-    /**
-     * 我的解法
-     * 
-     * 先转化为2进制字符串，然后再对2进制字符串进行操作是非常冗余的操作
-     */
-    public int binaryGap(int N) {
-        String xxx = transferDecimal2BinaryStr(N);
-        char [] charArr = xxx.toCharArray();
-        int locate = 0;
-        int gap = 0;
-        for(int i=0; i<charArr.length; i++) {
-            if(charArr[i]=='1') { // everytime we meet character '1'
-                gap = Math.max(gap, i-locate);
-                locate = i;
-            }
-        }
-        return gap;
-    }
-    
-    public String transferDecimal2BinaryStr(int xxx) {
-        String str = "";
-        while (xxx > 0) {
-            str = xxx % 2 + str;
-            xxx = xxx / 2;
-        }
-        return str.equals("") ? "0" : str;
-    }
-    
-    
-    public void binaryToDecimal(int n) {
-        int t = 0; //用来记录位数
-        int bin = 0; //用来记录最后的二进制数
-        int r = 0; //用来存储余数
-        while (n != 0) {
-            r = n % 2;
-            n = n / 2;
-            bin += r * Math.pow(10, t);
-            t++;
-        }
-        System.out.println(bin);
-    }
+
 
 }
