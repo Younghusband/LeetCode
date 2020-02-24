@@ -1,4 +1,4 @@
-package com.playground.thread.conn;
+package com.playground.thread.concurrent;
 
 /**
  * @description

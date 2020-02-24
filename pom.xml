@@ -35,6 +35,14 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/guava-23.0.jar</systemPath>
         </dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.62</version>
+			<optional>true</optional>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/fastjson-1.2.62.jar</systemPath>
+		</dependency>
 	</dependencies>
 	
 </project>

@@ -1,6 +1,4 @@
-package com.playground.thread.conn;
-
-import java.util.concurrent.CountDownLatch;
+package com.playground.thread.concurrent;
 
 /**
  * @description 

@@ -1,4 +1,4 @@
-package com.playground.thread.conn.ProducerAndConsumer.version2;
+package com.playground.thread.concurrent.ProducerAndConsumer.version2;
 /**
  * @description 
  * @author vermouth.Mac

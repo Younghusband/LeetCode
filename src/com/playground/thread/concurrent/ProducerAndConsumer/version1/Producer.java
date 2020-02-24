@@ -1,11 +1,11 @@
-package com.playground.thread.conn.ProducerAndConsumer.version1;
+package com.playground.thread.concurrent.ProducerAndConsumer.version1;
 
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.playground.thread.conn.ProducerAndConsumer.Goods;
+import com.playground.thread.concurrent.ProducerAndConsumer.Goods;
 
 /**
  * @description 

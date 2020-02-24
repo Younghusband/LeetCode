@@ -21,7 +21,7 @@ package com.problems.code.easy;
  */
 
 public class Count_and_Say {
-     public static void main(String[] args) {
+	public static void main(String[] args) {
 		Count_and_Say c = new Count_and_Say();
 		String s =c.countAndSay(5);   // 1,11,21
 		System.out.println(s);
@@ -33,21 +33,18 @@ public class Count_and_Say {
       * n-1位记录的是n位数字 在前面出现的次数
       * 
       * 符合
-      * 
-     * @param n
-     * @return
      */
     public String countAndSay(int n) {
-    	if(n==1) return "1"; 
-    	String temp = countAndSay(n-1);  //拿到前一项的值
+    	if(n == 1) return "1";
+    	String temp = countAndSay(n - 1);  //拿到前一项的值
     	StringBuffer sb = new StringBuffer();
     	int count = 1;
-    	if(temp.length()==1) return sb.append(count).append(temp).toString();
-    	for(int i=1;i<temp.length();i++){
-    		if(temp.charAt(i)==temp.charAt(i-1)){
+    	if(temp.length() == 1) return sb.append(count).append(temp).toString();
+    	for(int i = 1; i < temp.length(); i++){
+    		if(temp.charAt(i) == temp.charAt(i - 1)){
     			count++;
-    			if(i==temp.length()-1){
-    				sb.append(count).append(temp.charAt(i-1)); 
+    			if(i == temp.length() - 1){
+    				sb.append(count).append(temp.charAt(i - 1));
     			}
     		}else {
     			sb.append(count).append(temp.charAt(i-1));  

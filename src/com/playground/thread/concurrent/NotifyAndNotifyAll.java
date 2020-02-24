@@ -1,4 +1,4 @@
-package com.playground.thread.conn;
+package com.playground.thread.concurrent;
 
 import java.util.concurrent.TimeUnit;
 

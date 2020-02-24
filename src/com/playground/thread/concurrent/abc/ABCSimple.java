@@ -1,4 +1,4 @@
-package com.playground.thread.conn.abc;
+package com.playground.thread.concurrent.abc;
 /**
  * @description 
  * @author vermouth.Mac
