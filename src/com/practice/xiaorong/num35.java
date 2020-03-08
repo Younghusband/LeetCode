@@ -29,7 +29,7 @@ public class num35 {
             } else {
                 right = mid - 1;
                 if (right < 0 || target > nums[right]) {
-                    return right;
+                    return right + 1;
                 }
             }
         }
