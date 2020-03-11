@@ -9,7 +9,7 @@ public class No66 {
         for (int i = 0; i < t.length; i++) {
             System.out.printf(String.valueOf(t[i]));
         }
-        System.out.printf(Arrays.toString(plusOne(new int[]{9,9,9,9})));
+        System.out.printf(Arrays.toString(plusOne2(new int[]{9,9,8,9})));
     }
     public static int[] plusOne(int[] digits) {
         boolean carryFlag = false;
@@ -36,4 +36,19 @@ public class No66 {
         }
         return res;
     }
+    public static int[] plusOne2(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; --i) {
+            digits[i] += 1;
+            // 说明没有进位
+            digits[i] = digits[i] % 10;
+            if (digits[i] != 0) {
+                return digits;
+            }
+        }
+        // 默认都是0
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+
 }
