@@ -1,6 +1,6 @@
 package com.practice.xiaorong;
 
-public class num38 {
+public class No38 {
     public static void main(String[] args) {
         countAndSay(1);
     }

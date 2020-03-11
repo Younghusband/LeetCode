@@ -1,6 +1,6 @@
 package com.practice.xiaorong;
 
-public class num58 {
+public class No58 {
     public static void main(String[] args) {
         lengthOfLastWord("hello world");
     }

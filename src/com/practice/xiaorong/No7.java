@@ -3,7 +3,7 @@ package com.practice.xiaorong;
  * @author xiaorongxu@clubfactory.com
  * @date 2020-01-11 15:32
  */
-public class num7 {
+public class No7 {
     public int reverse(int x) {
         int reversedValue = 0;
         while (x != 0) {

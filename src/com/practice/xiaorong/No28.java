@@ -4,7 +4,7 @@ package com.practice.xiaorong;
  * @author xiaorongxu@clubfactory.com
  * @date 2020-01-11 15:51
  */
-public class num28 {
+public class No28 {
 
     public static void main(String args[]){
         System.out.println(strStr("aaa","a"));

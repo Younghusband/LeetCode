@@ -3,7 +3,7 @@ package com.practice.xiaorong;
 /**
  * 本题相当于二分查找的变种
  */
-public class num35 {
+public class No35 {
 
     public static void main(String args[]){
         int[] nums = {1, 2, 3};

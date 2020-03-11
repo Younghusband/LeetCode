@@ -1,6 +1,6 @@
 package com.practice.xiaorong;
 
-public class num53 {
+public class No53 {
 
     public static int maxSubArray(int[] nums) {
         if (nums.length == 1) {
