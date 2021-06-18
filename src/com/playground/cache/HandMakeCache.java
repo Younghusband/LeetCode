@@ -6,7 +6,6 @@ package com.playground.cache;
  * 数组顺序插入， 坐标越远则表示元素越新
  * 
  * 每次检查元素是否存在的时候都需要遍历数组，尝试过用map存储数组元素对应的下标，但这样平移数组的时候需要同时维护map中的值，更麻烦
- * 
  */
 
 public class HandMakeCache {
@@ -73,7 +72,7 @@ public class HandMakeCache {
 	/**
 	 * 平移数组的方法，start是要移动至的头位置，end为最后被移动的位置。
 	 * */
-	public void moveArrayElements(int [] arr, int start, int end){
+	public void moveArrayElements(int [] arr, int start, int end) {
 		for(int i=start; i<=end; i++){
 			arr[i] = arr[i+1];
 		}
@@ -95,14 +94,13 @@ public class HandMakeCache {
 //        	list.insert(4);
 //        	list.insert(5);
 //        	list.insert(3);
-        	
-        	for(int i=0;i<cacheSize;i++)
-        	{
+        	for(int i=0;i<cacheSize;i++) {
         		System.out.println(list.get(i));
         	}
         	System.out.println("成功插入"+count+"次元素.");
         	
         } catch(Exception ex) {
+
         }
         
 	}

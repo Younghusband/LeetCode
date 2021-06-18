@@ -55,7 +55,7 @@ public class Climbing_Stairs {
     
     public static void timeTest(){
     	long start1 = System.currentTimeMillis();
-    	System.out.println("运算结果是:" + climbStairs(44));
+    	System.out.println("运算结果是:" + climbStairs(5));
     	long end1 = System.currentTimeMillis();
     	System.out.println("非递归执行时间是："+ (end1 - start1));
     	long start = System.currentTimeMillis();

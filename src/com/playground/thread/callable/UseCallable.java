@@ -19,13 +19,11 @@ public class UseCallable {
 	
 	public static void main(String[] args) {
 		//创建一个callable
-		Callable a = new Task1();
+		Task1 callableTask = new Task1();
 		//用futureTask包装器
-		FutureTask future = new FutureTask(a);
-		
+		FutureTask future = new FutureTask(callableTask);
 		Thread t = new Thread(future);
 		t.start();
-		
 	}
 	
 	
@@ -35,7 +33,7 @@ public class UseCallable {
 
 class Task1 implements Callable {
 	@Override
-	public Object call() throws Exception {
+	public Object call() {
 		System.out.println(Thread.currentThread().getName()+"-------");
 		return 1;
 	}

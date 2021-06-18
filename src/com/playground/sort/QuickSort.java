@@ -23,14 +23,14 @@ public class QuickSort {
 
 
 	public int partion(int[] array, int lo, int hi) {
-		//固定的切分方式
+		// 固定的切分方式
 		int key = array[lo];
 		while (hi > lo) {
-			while (array[hi] >= key && hi > lo) {//从后半部分向前扫描 直到找到右侧小于基准数停止
+			while (array[hi] >= key && hi > lo) {// 从后半部分向前扫描 直到找到右侧小于基准数停止
 				hi--;
 			}
 			array[lo] = array[hi]; // 交换hi的值给lo
-			while (array[lo] <= key && hi > lo) {//从前半部分向后扫描
+			while (array[lo] <= key && hi > lo) {// 从前半部分向后扫描
 				lo++;
 			}
 			array[hi] = array[lo]; // 交换lo的值给hi
@@ -39,6 +39,9 @@ public class QuickSort {
 		return hi;
 	}
 
+	/**
+     * 递归实体
+     */
 	public void sort(int[] array, int lo, int hi) {
 		if (lo < hi) {
 			int index = partion(array, lo, hi);

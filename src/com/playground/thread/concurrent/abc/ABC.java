@@ -15,7 +15,7 @@ public class ABC implements Runnable{
 	private Object pre;
 	private Object self;
 	
-   public ABC(Object pre,Object self){
+   public ABC(Object pre, Object self){
 	   this.pre = pre;
 	   this.self = self;
    }
@@ -24,20 +24,19 @@ public class ABC implements Runnable{
 	@Override
 	public void run() {
 		int count = 10;
-		while(count>0){
-			synchronized(pre){
-				synchronized(self){
-						System.out.println(Thread.currentThread().getName()+"---"+count--);
-						self.notifyAll();   //如果换成notify会怎么样
-//						self.notify();
+		while(count>0) {
+			synchronized(pre) {
+				synchronized(self) {
+					System.out.println(Thread.currentThread().getName()+"---"+count--);
+					self.notifyAll();   //如果换成notify会怎么样
+//					self.notify();
 				}
-				
-						try {
-							Thread.sleep(1000);
-							pre.wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
+				try {
+					Thread.sleep(1);
+					pre.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
@@ -48,9 +47,9 @@ public class ABC implements Runnable{
 		Object lockB = new Object();
 		Object lockC = new Object();
 		
-		ABC one = new ABC(lockC,lockA);
-		ABC two = new ABC(lockA,lockB);
-		ABC three = new ABC(lockB,lockC);
+		ABC one = new ABC(lockC, lockA);
+		ABC two = new ABC(lockA, lockB);
+		ABC three = new ABC(lockB, lockC);
 		
 		Thread A = new Thread(one,"A");
 		Thread B = new Thread(two,"B");
@@ -59,7 +58,7 @@ public class ABC implements Runnable{
 		
 			try {
 				A.start();
-				Thread.sleep(1); 
+				Thread.sleep(1); // 两个sleep保证初始时是ABC
 //				t1.join();  //不能使用join，如果这里使用join的话。会等t1执行完毕
 				B.start();
 				Thread.sleep(1);
