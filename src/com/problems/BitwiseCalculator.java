@@ -58,7 +58,7 @@ public class BitwiseCalculator {
     public int minus(int num1, int num2) {
         return addByIteration(num1, addByIteration(~num2, 1)); // 取反加一 才是完成正负切换的完整流程
     }
-    
+    // test
     
     /** 
      * @Description: 乘法 a*b 
