@@ -9,9 +9,9 @@ package com.playground.linkedlist;
  */
 
 public class ReverseSinglyLinkedList {
+
 	public static void main(String[] args) {
 	    ReverseSinglyLinkedList service = new ReverseSinglyLinkedList();
-	    
 		ListNode head = new ListNode(0);
 		ListNode ListNode1 = new ListNode(1);
 		ListNode ListNode2 = new ListNode(2);
@@ -23,7 +23,7 @@ public class ReverseSinglyLinkedList {
 		// ListNode3.next == null
 		
 		ListNode h = head;   //链表遍历的时候都是一次性的，遍历完head就到末尾了，所以建立一个临时变量来遍历
-		while(h!=null){
+		while(h != null) {
 			System.out.print(h.data+"->");
 			h = h.next;
 		}
@@ -56,7 +56,6 @@ public class ReverseSinglyLinkedList {
 			head = temp;  //将head指向原本下一个结点
 		}
 		return prev;
-		
 	}
 	
 	//递归方式反转

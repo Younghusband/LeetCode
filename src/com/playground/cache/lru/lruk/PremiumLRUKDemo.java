@@ -140,7 +140,6 @@ public class PremiumLRUKDemo<K, V> extends BasicCacheAction<K, V> {
         demo.put("Four", 4);
 
         demo.put("Two", 3);
-        demo.put("Five", 5);
         demo.get("One");
         demo.put("One", 2);
 

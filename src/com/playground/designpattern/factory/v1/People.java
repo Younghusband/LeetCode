@@ -6,5 +6,5 @@ package com.playground.designpattern.factory.v1;
  */
 
 public interface People {
-      public void produce();
+      void produce();
 }

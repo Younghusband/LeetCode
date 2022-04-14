@@ -1,5 +1,7 @@
 package com.playground.sort;
 
+import com.util.StringUtil;
+
 /*********************************************
  * InsertionSort.java
  * Author: Vermouth.yf
@@ -28,7 +30,7 @@ public class InsertionSort {
 		int [] arr = {6,3,4,2,1,7,9,8,5};
 ////		insertSort(arr);
 		sort.sortArr(arr);
-        BubbleSort.print(arr);
+        StringUtil.printDigitArray(", ", arr);
 	}
 	
 	

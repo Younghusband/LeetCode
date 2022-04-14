@@ -73,15 +73,15 @@ public class SimpleLRUDemo<K, V> extends BasicCacheAction<K, V> {
 
     public static void main(String[] args) {
         SimpleLRUDemo<String, Integer> demo = new SimpleLRUDemo<>();
-        demo.put("One", 1);
+//        demo.put("One", 1);
         demo.put("Two", 2);
         demo.put("Three", 3);
         demo.put("Four", 4);
 
         demo.put("Two", 3);
         demo.put("Five", 5);
-
-        demo.get("One"); // get了个寂寞
+//
+//        demo.get("One"); // get了个寂寞
         demo.get("Four");
 
         demo.printMyself(demo.getCache());

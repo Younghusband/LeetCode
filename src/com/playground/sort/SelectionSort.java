@@ -1,5 +1,7 @@
 package com.playground.sort;
 
+import com.util.StringUtil;
+
 /*********************************************
  * SelectionSort.java
  * Author: Vermouth.yf
@@ -21,14 +23,13 @@ package com.playground.sort;
 public class SelectionSort {  
 	
 	public static void main(String[] args) {
-	    SelectionSort sort = new SelectionSort();
 	    int [] arr= {9,3,2,1,5,6,8,7,4};
-	    sort.selectionSort(arr);
-	    BubbleSort.print(arr);
+	    selectionSort(arr);
+        StringUtil.printDigitArray(", ", arr);
 	}
 	
-    public void selectionSort(int[] arr) {
-        int location; // 尽量不要在for循环中初始化变量
+    public static void selectionSort(int[] arr) {
+        int location;
         for (int i = 0; i < arr.length - 1; i++) { // 第一个位置~倒数第二个位置的选址  一共n-1轮
             location = i;
             for (int j = i + 1; j < arr.length; j++) { // 每一轮记录选择最小元素的地址

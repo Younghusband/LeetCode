@@ -1,11 +1,11 @@
 package com.util;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.stream.Collectors;
+
 public class StringUtil {
-    
-    
-    
-    
-    
     
     /**
      * @param src
@@ -29,6 +29,15 @@ public class StringUtil {
         }
         return returnStr;
     }
-    
+
+    public static void printDigitArray(String delimiter, int ... t) {
+        List<Integer> intList = Arrays.stream(t).boxed().collect(Collectors.toList());
+        StringJoiner sj = new StringJoiner(delimiter, "[", "]");
+        intList.forEach(
+            s -> sj.add(s+"")
+        );
+        System.out.println(sj.toString());
+    }
+
     
 }
