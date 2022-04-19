@@ -38,11 +38,11 @@ public class Roman_to_Integer {
     public int romanToInt(String s) {
         char [] strArr = s.toCharArray();
         int sum = getRoman(strArr[0]);
-        for(int i=0;i<strArr.length-1;i++){  //len == 1?skip: 
-           if(getRoman(strArr[i])<getRoman(strArr[i+1])){
-        	   sum =sum + getRoman(strArr[i+1]) - 2*getRoman(strArr[i]);
+        for(int i = 0; i < strArr.length - 1; i++){  //len == 1?skip:
+           if(getRoman(strArr[i]) < getRoman(strArr[i + 1])){
+        	   sum = sum + getRoman(strArr[i + 1]) - 2 * getRoman(strArr[i]);
            }else
-        	   sum +=getRoman(strArr[i+1]);
+        	   sum += getRoman(strArr[i + 1]);
         }
     	return sum;
     }

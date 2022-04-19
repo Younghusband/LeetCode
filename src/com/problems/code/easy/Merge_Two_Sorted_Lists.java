@@ -1,6 +1,6 @@
 package com.problems.code.easy;
 
-import com.problems.code.ListNode;
+import com.problems.dataobject.ListNode;
 
 /************************************************
     * Description: 

@@ -1,7 +1,14 @@
 package com.problems.code.easy;
 /************************************************
- * Description: Write a function to find the longest common prefix string
+ * Description:
+ * 14. Longest Common Prefix
+ *
+ * Write a function to find the longest common prefix string
  * amongst an array of strings.
+ *
+ * Example:
+ * Input: strs = ["flower","flow","flight"]
+ * Output: "fl"
  * 
  * @author Vermouth.yf
  * @version 1.0
@@ -15,25 +22,26 @@ public class Longest_Common_Prefix {
 		System.out.println(new Longest_Common_Prefix().longestCommonPrefix(strs));
 	}
 	
-	public String longestCommonPrefix(String[] strs) {
-		if(strs==null||strs.length==0) return "";
+	public String longestCommonPrefix(String [] strs) {
+		if(strs == null || strs.length == 0) return "";
 		int len = this.getMinLen(strs);  // this.  2333
-        int j=0;
-        out: while(j<len){
+        int j = 0;
+        out: while(j < len) {
         	   int i = 1;
-	        	while(i<strs.length){
-	        		if(strs[0].charAt(j)==strs[i++].charAt(j)){}
-	        		else
-	        			break out;  //end the outer loop , flag or sth is not necessary
-	        	}
-	        	j++;
+        	   while(i < strs.length) {
+        	   	   if(strs[0].charAt(j) == strs[i++].charAt(j)){}
+        	   	   else
+        	   	   	   break out;  //end the outer loop , flag or sth is not necessary
+        	   }
+        	   j++;
             }
 		return strs[0].substring(0, j);
 	}
-	public int getMinLen(String[] strs){
+
+	private int getMinLen(String [] strs){
 		int temp = Integer.MAX_VALUE;
-		for(int i=0;i<strs.length;i++){
-			temp=(temp>strs[i].length())?strs[i].length():temp;
+		for(int i = 0; i < strs.length; i++) {
+			temp=(temp > strs[i].length()) ? strs[i].length() : temp;
 		}
 		return temp;
 	}

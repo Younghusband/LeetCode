@@ -1,4 +1,4 @@
-package com.problems.code;
+package com.problems.dataobject;
 
 
 public class ListNode {

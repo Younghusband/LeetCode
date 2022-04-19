@@ -1,21 +1,22 @@
-package com.problems.code.easy;
+package com.problems.code.medium;
 
 
 /**
- * @description 
- *      The count-and-say sequence is the sequence of integers beginning as follows:
-        1, 11, 21, 1211, 111221, 312211,13112221，
-
-        1 is read off as "one 1" or 11.
-        11 is read off as "two 1s" or 21.
-        21 is read off as "one 2, then one 1" or 1211.
-        Given an integer n, generate the nth sequence.
-        Note: The sequence of integers will be represented as a string.
-        
-                        如果没理解错的话  输入3
-        1，11，21    是返回21  而不是返回"1,11,21"
- * 
- * 
+ * @description
+ *
+ * 38. Count and Say
+ *
+ * The count-and-say sequence is the sequence of integers beginning as follows:
+ * 1, 11, 21, 1211, 111221, 312211,13112221，
+ * 1 is read off as "one 1" or 11.
+ * 11 is read off as "two 1s" or 21.
+ * 21 is read off as "one 2, then one 1" or 1211.
+ * Given an integer n, generate the nth sequence.
+ * Note: The sequence of integers will be represented as a string.
+ *
+ * 如果没理解错的话  输入3
+ * 1，11，21    是返回21  而不是返回"1,11,21"
+ *
  * @author vermouth.Mac
  * @version 2017年2月25日 下午6:25:53
  */
@@ -23,7 +24,7 @@ package com.problems.code.easy;
 public class Count_and_Say {
 	public static void main(String[] args) {
 		Count_and_Say c = new Count_and_Say();
-		String s =c.countAndSay(5);   // 1,11,21
+		String s = c.countAndSay(5);   // 1,11,21
 		System.out.println(s);
 	}
      

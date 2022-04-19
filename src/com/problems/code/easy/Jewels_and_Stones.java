@@ -2,7 +2,7 @@ package com.problems.code.easy;
 
 /**
  * @author mr_yo
- * 
+ * 771. Jewels and Stones
  * char A(65)~z(122)
  * 
  * 2nd 1st solution better
@@ -12,70 +12,61 @@ package com.problems.code.easy;
 public class Jewels_and_Stones {
     
     public static void main(String[] args) {
-       String J = "z";
-       String S = "ZZ";
+        String J = "aA";
+        String S = "aAAbbbb";
         
-        Jewels_and_Stones service = new Jewels_and_Stones();
-        System.out.println(service.numJewelsInStones(J, S));
+        System.out.println(numJewelsInStones(J, S));
+//        System.out.println("z".charAt(0));
+
     }
     
     
     /**
      * fastest solution
+     * key points:
+     * 1. char not Char
+     * 2. char as array index(char auto convert to ascii int value)
+     * 3. do things one-path o(n)
      */
-    public int numJewelsInStones(String J, String S) {
-       if(J == null || S == null || J.length() == 0 || S.length() == 0) return 0;
-       boolean [] jMap = new boolean[128];  // z == 122  
+    public static int numJewelsInStones(String jewels, String stones) {
+       if(jewels == null || stones == null || jewels.length() == 0 || stones.length() == 0) return 0;
+       boolean [] jMap = new boolean[128];  // z == 122
        int count = 0;
-       for(char j: J.toCharArray()) {
-           jMap[j] = true;
+       for(char j: jewels.toCharArray()) {
+           jMap[j] = true;  // 核心在于 char 进数组中自动转ascii码了
        }
-       
-       for(char s: S.toCharArray()) {
+
+       for(char s: stones.toCharArray()) {
            if(jMap[s]) count++;
        }
-       return count; 
+       return count;
     }
+
+    /**
+     * however 比较慢
+     */
+//    public static int numJewelsInStones(String jewels, String stones) {
+//        String rules = "[^"+jewels+"]";
+//        stones = stones.replaceAll(rules, "");
+//        return stones.length();
+//    }
     
     
     /**
-     * the 2nd fast solution
+     * 这种会浪费每一次遍历stones
      */
-//    public int numJewelsInStones(String J, String S) {
-//        char [] jewels = J.toCharArray();
-//        char [] stones = S.toCharArray();
-//        
+//    public static int numJewelsInStones(String jewels, String stones) {
+//        char [] jChars = jewels.toCharArray();
+//        char [] sChars = stones.toCharArray();
 //        int count = 0;
-//        for (char jc : jewels) {
-//            for(char st: stones) {
+//        for (char jc : jChars) {
+//            for(char st: sChars) {
 //                if (st == jc) {
 //                    count++;
 //                }
 //            }
 //        }
-//       return count; 
+//       return count;
 //    }
-    
-    
-    
-    /**
-     * my shit solution
-     */
-//    public int numJewelsInStones(String J, String S) {
-//        int sum = 0;
-//        if (J == null || J.equals("") || null == S || S.equals("")) {
-//            return 0;
-//        }
-//        for (int i = 0; i < S.length(); i++) {
-//            if (J.contains(String.valueOf(S.charAt(i)))) {
-//                sum++;
-//            }
-//        }
-//        return sum;
-//    }
-    
-    
-    
-    
 
 }

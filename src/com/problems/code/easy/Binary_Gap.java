@@ -13,14 +13,20 @@ package com.problems.code.easy;
  * 比如 111010111  这里面前三个连续的‘1’距离都为1, 第三个与第四个‘1’之间的距离就是2... 以此类推
  * 
  * 通过这道题学到的:
- * 1. 通过右移的方式能够不断的获取10进制数字的各个2进制位(而不用将10进制转换为2进制）
+ * 1. 通过右移的方式(>>1 然后&1)能够不断的获取10进制数字的各个2进制位(而不用将10进制转换为2进制）
  *
  * 2020.1.10
  * 1. 纠正方法#binaryGapByIndex的根本性错误, 并优化。
  * 2. 删除弱智解法
  */
 public class Binary_Gap {
-    
+
+    public static void main(String[] args) {
+        Binary_Gap service = new Binary_Gap();
+        System.out.println(service.binaryGapByLast(22));
+        System.out.println(21 & 3);
+    }
+
     /**
      * 101101
      * >>1 10110 ; 10110 & 1 == 0 ; 不记录下标
@@ -31,10 +37,11 @@ public class Binary_Gap {
     public int binaryGapByIndex(int n) {
         int [] bitArr = new int[32]; // 极端情况下会占满, 即32位各位上都是‘1’
         int t = 0;
-        for(int i = 0; i < 32; i++)
-            if (((n >> i) & 1) != 0)  // key code 该位有值且为1
+        for(int i = 0; i < 32; i++) {
+            if (((n >> i) & 1) != 0) { // key code 该位有值且为1
                 bitArr[t++] = i;
-        
+            }
+        }
         int gap = 0;
         for(int i = 0; i < t-1; i++) {
             gap = Math.max(bitArr[i+1] - bitArr[i], gap);
@@ -58,14 +65,5 @@ public class Binary_Gap {
         }
         return gap;
     }
-    
-    public static void main(String[] args) {
-        Binary_Gap service = new Binary_Gap();
-        System.out.println(service.binaryGapByLast(22));
-
-        System.out.println(21 & 3);
-    }
-    
-
 
 }
