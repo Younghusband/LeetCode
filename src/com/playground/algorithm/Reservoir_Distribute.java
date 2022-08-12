@@ -10,8 +10,8 @@ import java.util.concurrent.Executors;
 public class Reservoir_Distribute {
     
     static ExecutorService exec = Executors.newFixedThreadPool(4);
-    
-    
     // https://www.jianshu.com/p/7a9ea6ece2af
+
+    
 
 }
